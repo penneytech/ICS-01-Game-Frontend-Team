@@ -1,6 +1,6 @@
 import './login.js'
 
-// Connect to the main server
+// Connect to the server
 export const socket = io(
     "https://ics-01-game-studio-backend-team.ics3uc-2023s-01.repl.co"
 );
