@@ -1,6 +1,6 @@
 import './login.js'
 // Here is a test change
-
+// Here is a conflicting change
 
 // Connect to the server
 export const socket = io(
