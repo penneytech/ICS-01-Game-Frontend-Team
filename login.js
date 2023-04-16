@@ -1,5 +1,4 @@
 import { socket } from './script.js';
-import './testfile.js';
 
 
 // Get the 'content' div element

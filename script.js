@@ -1,5 +1,6 @@
 import './login.js'
 // Here is a test change
+import './testfile.js';
 
 
 // Connect to the server
