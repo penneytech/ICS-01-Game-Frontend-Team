@@ -1,29 +1,37 @@
+/*
+This function initializes the canvas for the game by creating a canvas element and appending it to the content div. It also sets the canvas dimensions and creates the canvas context. Finally, it starts the game by calling the startGame() function.
+*/
+
 import { setGlobal } from "../globals.js";
-import startGame from './game.js'
+import startGame from './game.js';
 
 export default function initGame() {
-    // Get a reference to the content div
-    const contentDiv = document.getElementById("content");
-    contentDiv.innerHTML = "";
-    
-    // Create a canvas element
-    const canvas = document.createElement("canvas");
+  // Get a reference to the content div
+  const contentDiv = document.getElementById("content");
+  
+  // Clear the content div
+  contentDiv.innerHTML = "";
 
-    // Set the canvas dimensions to 200 x 200
-    canvas.width = 200;
-    canvas.height = 200;
+  // Create a canvas element
+  const canvas = document.createElement("canvas");
 
-    // Give the canvas an id of "myCanvas"
-    canvas.id = "myCanvas";
+  // Set the canvas dimensions to 200 x 200
+  canvas.width = 200;
+  canvas.height = 200;
 
-    // Append the canvas to the content div
-    contentDiv.appendChild(canvas);
+  // Give the canvas an id of "myCanvas"
+  canvas.id = "myCanvas";
 
-    // Create the canvas context
-    const ctx = canvas.getContext("2d");
+  // Append the canvas to the content div
+  contentDiv.appendChild(canvas);
 
-    setGlobal('canvas', canvas)
-    setGlobal('ctx', ctx);
+  // Create the canvas context
+  const ctx = canvas.getContext("2d");
 
-    startGame()
+  // Set the canvas and context as global variables
+  setGlobal('canvas', canvas);
+  setGlobal('ctx', ctx);
+
+  // Start the game
+  startGame();
 }
