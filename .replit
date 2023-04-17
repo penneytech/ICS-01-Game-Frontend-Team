@@ -1,5 +1,5 @@
 hidden=[".config"]
-entrypoint = "script.js"
+entrypoint = "socket.js"
 
 # hosting is currently hardcoded for this language
 # [hosting]

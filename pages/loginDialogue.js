@@ -1,5 +1,4 @@
-import { socket } from './script.js'
-
+import { getGlobal, setGlobal } from '../globals.js';
 
 // Get the 'content' div element
 const contentDiv = document.getElementById('content');
@@ -29,7 +28,10 @@ sendButton.innerHTML = 'Connect';
 loginDiv.appendChild(sendButton);
 
 sendButton.onclick = function() {
+    // Get the socket global
+    const socket = getGlobal('socket');
 
+    // Obtain the contents of the  username and password fields
     const usernameinput = document.getElementById("username");
     const username = usernameinput.value;
     const passwordinput = document.getElementById("password");
