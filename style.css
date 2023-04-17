@@ -5,6 +5,10 @@ html, body {
   text-align: center;
 }
 
+#myCanvas{
+    border-style: solid;
+}
+
 #content {
     display: flex;
     width: 100%;
