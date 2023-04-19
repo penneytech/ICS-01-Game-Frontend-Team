@@ -4,12 +4,17 @@ The game.js file sets up the canvas context and contains the main loop that will
 
 // Imports
 import { getGlobal } from "../globals.js";
+import { playerPawn } from "./player.js";
+import { playerOpponent } from "./opponent.js";
+import { food } from "./food.js";
+import { onKeyPress } from "./keyPress.js";
+import { drawMapOutline } from "./drawMapOutline.js"
 
+
+// import { playerOpponentTwo } from "./opponent 2.js";
 // Global page variables 
 let ctx;
 let canvas;
-let count = 0;
-
 /********************
 Initialize the canvas and start the game loop
 ********************/
@@ -21,6 +26,8 @@ export default function startGame() {
 
     // Start the game loop
     gameLoop();
+
+
 }
 
 /********************
@@ -36,12 +43,17 @@ function gameLoop() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     // Draw the count on the canvas
-    ctx.font = "30px Arial";
-    ctx.fillText(count, 50, 100);
+    // ctx.font = "30px Arial";
+    // ctx.fillText(count, 50, 100);
 
+    // player = playerPawn("ctx");
     // Increment the count
-    count++;
-
+    drawMapOutline();
+    playerOpponent();
+    playerPawn();
+    onKeyPress();
+    
+    // playerOpponentTwo();
     // Loop this function (this always stays at the bottom)
     requestAnimationFrame(gameLoop);
 }
