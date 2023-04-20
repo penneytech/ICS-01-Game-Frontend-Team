@@ -42,18 +42,13 @@ function gameLoop() {
     // Clear the canvas (This always stays at the top)
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Draw the count on the canvas
-    // ctx.font = "30px Arial";
-    // ctx.fillText(count, 50, 100);
-
-    // player = playerPawn("ctx");
-    // Increment the count
+  
     drawMapOutline();
+  onKeyPress();
     playerOpponent();
     playerPawn();
-    onKeyPress();
     
-    // playerOpponentTwo();
+    
     // Loop this function (this always stays at the bottom)
     requestAnimationFrame(gameLoop);
 }

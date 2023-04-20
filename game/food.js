@@ -1,4 +1,12 @@
 import { getGlobal } from "../globals.js";
+
+//Initialize Food Images
+        // Define the image URL and preload the image
+        let imageUrl = "./game/CanRed.png";
+        let imageObj = new Image();
+        imageObj.src = imageUrl;
+
+
 // let foodnum;
 export function food() {
   //SAMPLE FOOD ARRAY
@@ -23,9 +31,12 @@ export function food() {
     let ctx = getGlobal("ctx");
     ctx.beginPath();
     ctx.arc(positionX,positionY, 10, 0, 2 * Math.PI);
-    ctx.fillStyle = "red";
-    ctx.fill();
+
+    ctx.drawImage(imageObj, positionX - 50, positionY -50, 100, 100);
+
   })
+
+  
 
     
 }      

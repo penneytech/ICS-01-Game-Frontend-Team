@@ -10,15 +10,16 @@ let rightPressed = false;
 let upPressed = false;
 let downPressed = false;
 
+
 let x = 100;
 let y = 100;
 
-let speed = 2;
+let speed = 1;
 
 // let opponent = playerOpponent();
 // Add event listeners for key presses
 document.addEventListener("keydown", function(event) {
-
+ 
     if (event.code === "KeyA") {
         leftPressed = true;
         onKeyPress();
@@ -51,22 +52,23 @@ document.addEventListener("keyup", function(event) {
 });
 
 export function onKeyPress() {
-    if (leftPressed) {
+    if (leftPressed && x>0) {
         x -= speed;
-        console.log("x:", x, "y:", y)
+        // console.log("x:", x, "y:", y)
     }
-    if (rightPressed) {
+    if (rightPressed && x<4000) {
         x += speed;
-        console.log("x:", x, "y:", y);
+        // console.log("x:", x, "y:", y);
     }
-    if (upPressed) {
+    if (upPressed && y>0) {
         y -= speed;
-        console.log("x:", x, "y:", y)
+        // console.log("x:", x, "y:", y)
     }
-    if (downPressed) {
+    if (downPressed && y<4000) {
         y += speed;
-        console.log("x:", x, "y:", y)
+        // console.log("x:", x, "y:", y)
     }
+  
 
     setGlobal('playerposition', { "x": x, "y": y })
     //console.log("Player Pos Set:", getGlobal('playerposition'))
