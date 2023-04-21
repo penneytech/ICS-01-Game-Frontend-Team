@@ -3,20 +3,25 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Socket.IO Client</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.0/socket.io.js">
-    </script>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Socket.IO Client</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.0/socket.io.js">
+  </script>
+  <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
 <body>
-    <h1>Socket.IO Client</h1>
+  <h1>Socket.IO Client</h1>
 
-    <div id="content"> </div>
+  <!-- Content Container -->
+  <div id="content"> </div>
 
-    <script type="module" src="main.js"></script>
+  <!-- Joystick Container -->
+  <div id="joy1Div" style="width:200px;height:200px;margin:0px;position:absolute;bottom:0px;right:0px;"></div>
+
+  <script src="joystick/joysticklibrary.js"></script>
+  <script type="module" src="main.js"></script>
 </body>
 
 </html>
