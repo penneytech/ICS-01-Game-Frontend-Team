@@ -3,6 +3,7 @@ html, body {
   width: 100%;
   margin: 0px;
   text-align: center;
+  background-image: url("candybackground.png");
 }
 
 #myCanvas{
@@ -23,14 +24,16 @@ html, body {
 }
 
 #logindiv {
-    display: flex;
-    flex-direction: column;
-    width: 203px;
-    background-color: #745788;
-    padding: 25px;
-    border-radius: 10px;
-    justify-content: center;
-    align-items: center;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 input {
@@ -41,12 +44,35 @@ input {
     padding: 6px;
 }
 
+#page-title {
+  font-family: fantasy;
+  font-size: 48px;
+  position: relative;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  color: #black;
+}
+
+@media (min-width: 769px) {
+  #page-title {
+    top: 2%;
+  }
+}
+
+@media (max-width: 768px) {
+  #page-title {
+    top: 1%;
+  }
+}
+
 button {
     border-style: none;
     padding: 8px;
     width: min-content;
     font-size: 22px;
-    color: white;
+    color: black;
     background-color: #cec474;
     border-radius: 10px;
     transition: 0.2s;
@@ -60,4 +86,105 @@ button:hover {
     background-color: #ce7373;
     border-radius: 10px;
     transition: 0.2s;
+}
+
+#my-leaderboard-table {
+  position: absolute;
+  bottom: 40%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: calc(100% - 40px); 
+  max-width: 400px; 
+  background-color: white;
+  font-family: monospace;
+}
+
+@media (max-width: 768px) {
+  #my-leaderboard-table {
+    position: absolute;
+    bottom: auto;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 40px); 
+    max-width: 400px; 
+    background-color: white;
+    font-family: monospace;
+  }
+}
+
+#my-leaderboard-table tr:first-child {
+  background-color: black;
+  color: white;
+}
+
+#my-leaderboard-table tr:nth-child(2) td:first-child {
+  background-color: gold;
+  color: black;
+}
+
+#my-leaderboard-table tr:nth-child(2) td:nth-child(2) {
+  background-color: gold;
+  color: black;
+}
+
+#my-leaderboard-table tr:nth-child(2) td:last-child {
+  background-color: gold;
+  color: black;
+}
+
+#my-leaderboard-table tr:nth-child(3) td:first-child {
+  background-color: silver;
+  color: black;
+}
+
+#my-leaderboard-table tr:nth-child(3) td:nth-child(2) {
+  background-color: silver;
+  color: black;
+}
+
+#my-leaderboard-table tr:nth-child(3) td:last-child {
+  background-color: silver;
+  color: black;
+}
+
+#my-leaderboard-table tr:nth-child(4) td:first-child {
+  background-color: #cd7f32;
+  color: black;
+}
+
+#my-leaderboard-table tr:nth-child(4) td:nth-child(2) {
+  background-color: #cd7f32; 
+  color: black;
+}
+
+#my-leaderboard-table tr:nth-child(4) td:last-child {
+  background-color: #cd7f32;
+  color: black;
+}
+
+#play-button {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  width: 50%;
+  max-width: 300px;
+  padding: 20px;
+  background-color: #00fb6f;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  border: 5px solid black;
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  #play-button {
+    width: 100%;
+    max-width: none;
+    font-size: 36px;
+  }
 }
