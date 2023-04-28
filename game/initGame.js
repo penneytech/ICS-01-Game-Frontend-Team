@@ -4,7 +4,6 @@ This function initializes the canvas for the game by creating a canvas element a
 
 import { setGlobal } from "../globals.js";
 import startGame from './game.js';
-import { food } from "./food.js"
 export default function initGame() {
   // Get a reference to the content div
   const contentDiv = document.getElementById("content");
@@ -15,7 +14,7 @@ export default function initGame() {
   // Create a canvas element
   const canvas = document.createElement("canvas");
 
-  // Set the canvas dimensions to 200 x 200
+  // Set the canvas dimensions to 600 x 600
   canvas.width = 600;
   canvas.height = 600;
 

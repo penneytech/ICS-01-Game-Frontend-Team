@@ -12,7 +12,7 @@ export function drawMapOutline() {
     let ctx = getGlobal("ctx");
     
     ctx.beginPath();
-    ctx.rect(positionX, positionY, 4000, 4000);
+    ctx.rect(positionX, positionY, 6000, 6000);
     ctx.stroke();
     
   

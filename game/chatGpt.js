@@ -1,4 +1,12 @@
+
 import { getGlobal } from "../globals.js";
+
+ctx.beginPath();
+ctx.rect(centerX - radius, centerY - radius, radius*2, radius*2);
+ctx.lineWidth = 1;
+ctx.strokeStyle = "red";
+ctx.stroke();
+
 //Initialize Food Images
 // Define the image URL and preload the image
 let imageUrl = ["./game/CanRed.png"];
@@ -33,5 +41,7 @@ export function food() {
         ctx.lineWidth = 1;
         ctx.strokeStyle = "red";
         ctx.stroke();
+
     })
+
 }
