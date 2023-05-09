@@ -1,8 +1,4 @@
-
 import { getGlobal, setGlobal } from '../globals.js';
-import { food } from "./food.js";
-
-console.log("IS KEYPRESS WORKING?");
 //const canvas = document.getElementById("myCanvas");
 // import { playerOpponent} from "./opponent.js";
 let leftPressed = false;
@@ -10,16 +6,16 @@ let rightPressed = false;
 let upPressed = false;
 let downPressed = false;
 
-
 let x = 100;
 let y = 100;
 
-let speed = 3;
+let speed = 10;
 
-// let opponent = playerOpponent();
+
+
 // Add event listeners for key presses
 document.addEventListener("keydown", function(event) {
- 
+
     if (event.code === "KeyA") {
         leftPressed = true;
         onKeyPress();
@@ -52,25 +48,32 @@ document.addEventListener("keyup", function(event) {
 });
 
 export function onKeyPress() {
-    if (leftPressed && x>0) {
+
+    let socket = getGlobal("socket");
+    let playerposition = getGlobal("playerposition");
+
+    if (leftPressed && x > 16) {
         x -= speed;
-       
+
     }
-    if (rightPressed && x <6000) {
+    if (rightPressed && x < 5984) {
         x += speed;
-      
+
     }
-    if (upPressed && y>0) {
+    if (upPressed && y > 16) {
         y -= speed;
-       
+
     }
-    if (downPressed && y<6000) {
+    if (downPressed && y < 5984) {
         y += speed;
-        
+
     }
-  
-// console.log("x:", x, "y:", y);
+
+    if (playerposition.x != x || playerposition.y != y) {
+        socket.emit('playerposition', { "x": x, "y": y });
+    }
+
+
     setGlobal('playerposition', { "x": x, "y": y })
-    //console.log("Player Pos Set:", getGlobal('playerposition'))
-  food();
+
 }

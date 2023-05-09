@@ -3,13 +3,23 @@ html, body {
   width: 100%;
   margin: 0px;
   text-align: center;
-  background-image: url("candybackground.png");
+  background-image: url("./images/candybackground.png");
 }
-
+#minimapcanvas{
+  border-style: solid;
+  border-color: black;
+     background-color: #ff0099;
+              /* position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2; */
+}
 #myCanvas{
     border-style: solid;
   border-color: black;
-   background-color: white;
+     background-color: #fff5fb;
+  /* position: relative;
+            z-index: 1; */
 }
 
 #content {
@@ -54,7 +64,7 @@ input {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
-  color: #black;
+  color: black;
 }
 
 @media (min-width: 769px) {
