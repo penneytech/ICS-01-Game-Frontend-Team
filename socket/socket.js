@@ -6,9 +6,11 @@ This code connects to the server and sets the socket global variable using the i
 import { getGlobal, setGlobal } from '../globals.js';
 import loginFail from './loginFail.js';
 import loginSucceed from './loginSucceed.js';
+import leaderBoardData from '../pages/leaderBoardData.js';
+
 
 // Connect to the server and set the socket global variable
-const socket = io("https://ics-01-game-studio-backend-team.ics3uc-2023s-01.repl.co");
+const socket = io("https://ics-01-game-studio-backend-team.rithiksreekumar.repl.co");
 setGlobal('socket', socket);
 
 // Actions that happen when the connection is established
@@ -32,3 +34,10 @@ socket.on("loginFailed", (message) => {
 socket.on("loginSucceed", (message) => {
   loginSucceed(message);
 });
+
+socket.on("leaderboardData",(message)=> {
+    setGlobal("leaderboardData", message);
+      console.log('[leaderboardData]: received -', message);
+    leaderBoardData();
+    
+})
