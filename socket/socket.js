@@ -6,9 +6,11 @@ This code connects to the server and sets the socket global variable using the i
 import { getGlobal, setGlobal } from '../globals.js';
 import loginFail from './loginFail.js';
 import loginSucceed from './loginSucceed.js';
-
+import updateFood from './updateFood.js';
+import foodInit from './foodInit.js';
+import opponentMovement from './opponentMovement.js';
 // Connect to the server and set the socket global variable
-const socket = io("https://ics-01-game-studio-backend-team.ics3uc-2023s-01.repl.co");
+const socket = io("https://game-studio.matthewschulte1.repl.co");
 setGlobal('socket', socket);
 
 // Actions that happen when the connection is established
@@ -31,4 +33,19 @@ socket.on("loginFailed", (message) => {
 // When a login succeeds, fetch the gameHTML and start the game
 socket.on("loginSucceed", (message) => {
   loginSucceed(message);
+});
+
+// When a message is received from the server
+socket.on("foodupdate", (message) => {
+  console.log("Food Update:", message);
+updateFood(message);
+});
+
+socket.on("foodinit", (message) => {
+  console.log("Food Init:", message);
+  foodInit(message);
+});
+socket.on("opponentmovement", (message) => {
+  console.log("Opponent movement:", message);
+  opponentMovement(message);
 });

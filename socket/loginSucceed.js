@@ -3,7 +3,6 @@ This code defines a function that handles a successful login attempt. It takes i
 */
 
 import initGame from '../game/initGame.js';
-import { getGlobal } from '../globals.js';
 
 export default function loginSucceed(message) {
   console.log("Received message:", message);
