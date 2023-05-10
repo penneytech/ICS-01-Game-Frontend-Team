@@ -15,7 +15,6 @@ export function playerPawn() {
   let centerY = 300;
   let radius = 15;
   let scoreMultiplier = getGlobal("scoreMultiplier");
-  let playerposition = getGlobal("playerposition")
   let player = getGlobal("player");
 
   // Draw the circle

@@ -13,7 +13,6 @@ const globals = {
   sprinkles:[],
   minimapcanvas: [],
   ctxmm: [],
-  
  //playerlocation variables
   playerposition: {"x": 100, "y": 100}, // Position on the map
   playeroffset: {"x": 300, "y": 300}, // Offset from the physical canvas

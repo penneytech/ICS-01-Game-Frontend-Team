@@ -1,4 +1,3 @@
-import initGame from '../game/initGame.js';
 import { getGlobal, setGlobal } from '../globals.js';
 
 export function TitlePage() {

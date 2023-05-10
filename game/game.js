@@ -18,27 +18,26 @@ let ctx;
 let canvas;
 
 export default function startGame() {
-    // Get canvas and context
-    ctx = getGlobal('ctx');
-    canvas = getGlobal('canvas');
+  // Get canvas and context
+  ctx = getGlobal('ctx');
+  canvas = getGlobal('canvas');
 
-    // Start the game loop
-    gameLoop();
-  onKeyPress();
+  // Start the game loop
+  gameLoop();
 }
 
 function gameLoop() {
-    // Clear the canvas (This always stays at thsee top)
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  // Clear the canvas (This always stays at thsee top)
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    drawMapOutline();
-    
-    movePlayer();
-    food();
-    playerOpponent();
-    playerPawn();
-    hitDetection();
+  drawMapOutline();
 
-    // Loop this function (this always stays at the bottom)
-    requestAnimationFrame(gameLoop);
+  movePlayer();
+  food();
+  playerOpponent();
+  playerPawn();
+  hitDetection();
+
+  // Loop this function (this always stays at the bottom)
+  requestAnimationFrame(gameLoop);
 }

@@ -3,9 +3,9 @@
 // // Run the socket module to establish a connection with the server
 import './socket/socket.js';
 
-  import { LoginDialogue } from './pages/loginDialogue.js'
-  LoginDialogue();
-  
+import { LoginDialogue } from './pages/loginDialogue.js'
+LoginDialogue();
+
 //import initGame from './game/initGame.js';
 //initGame();
 
