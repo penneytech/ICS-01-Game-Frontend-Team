@@ -2,6 +2,8 @@
 This code defines an object to hold the global variables and two functions to set and retrieve global variables.
 */
 
+import { sampleleaderboarddata } from "./sampleleaderboarddata.js";
+
 // Define an object to hold the global variables
 const globals = {
   //starting up variables
@@ -85,6 +87,8 @@ const globals = {
   ],
   opponentwidth: 30,
   opponentheight: 30,
+  userstats: [290811, 2389901, 16782, 19, 'test'],
+  leaderboarddata: sampleleaderboarddata,
 };
 
 // Define a function to set a global variable
