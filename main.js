@@ -3,9 +3,6 @@
 // // Run the socket module to establish a connection with the server
 import './socket/socket.js';
 
-// //Import the joystick
-  import './joystick/joystick.js'
-
   import { LoginDialogue } from './pages/loginDialogue.js'
   LoginDialogue();
   

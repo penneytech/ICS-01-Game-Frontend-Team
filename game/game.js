@@ -7,7 +7,7 @@ import { getGlobal } from "../globals.js";
 import { playerPawn } from "./player.js";
 import { playerOpponent } from "./opponent.js";
 import { food } from "./food.js";
-import { onKeyPress } from "./keyPress.js";
+import { movePlayer } from "./movePlayer.js";
 import { drawMapOutline } from "./drawMapOutline.js";
 import { hitDetection } from "./hitDetection.js";
 // import { minimap } from "./minimap.js";
@@ -33,7 +33,7 @@ function gameLoop() {
 
     drawMapOutline();
     
-    onKeyPress();
+    movePlayer();
     food();
     playerOpponent();
     playerPawn();
