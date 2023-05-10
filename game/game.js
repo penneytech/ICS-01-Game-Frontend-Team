@@ -10,7 +10,7 @@ import { food } from "./food.js";
 import { movePlayer } from "./movePlayer.js";
 import { drawMapOutline } from "./drawMapOutline.js";
 import { hitDetection } from "./hitDetection.js";
-// import { minimap } from "./minimap.js";
+//import { minimap } from "./minimap.js";
 
 // import { playerOpponentTwo } from "./opponent 2.js";
 // Global page variables 
