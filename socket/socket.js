@@ -53,6 +53,10 @@ socket.on("opponentmovement", (message) => {
   opponentMovement(message);
 });
 
+socket.on("initopponents", (message) => {
+  console.log("Inital opponents:", message);
+  initopponents(message);
+
 socket.on("leaderboarddata", (message) => {
   console.log("Leaderboard data:", message);
   setGlobal('leaderboarddata', message);

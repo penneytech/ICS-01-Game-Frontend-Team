@@ -1,27 +1,40 @@
-import { drawMapOutline } from "./drawMapOutline.js";
-import { getGlobal} from "./globals";
+import { getGlobal } from "../globals.js";
+  
+export function minimap() {
+let canvas = getGlobal('canvas');
+    let ctx = getGlobal("ctx");
+    let opponents = getGlobal("opponents");
+    let player = getGlobal("player");
+    ctx.beginPath();
+    ctx.rect(0, 0, canvas.height/4, canvas.width/4);
+    ctx.fillStyle = "rgba(12, 24, 66, 0.5)";
+    ctx.fill();
 
-export function minimap(minimapCtx) {
-  const scaleFactor = 0.1;
+    let playerposition = getGlobal("playerposition");
 
-  minimapCtx.beginPath();
-  minimapCtx.rect(0, 0, minimapCanvas.width, minimapCanvas.height);
-  minimapCtx.stroke();
+    // Our position
+    ctx.beginPath();
+    ctx.fillStyle = "blue";
+    ctx.arc(mapValue(playerposition.x, [0, 6000], [0,canvas.height/4]), mapValue(playerposition.y, [0, 6000], [0,canvas.width/4]), 2, 0, 2 * Math.PI);
+    ctx.fill();
 
-  const mapWidth = 6000;
-  const mapHeight = 6000;
+    opponents.forEach((opponent) => {
+        // let positionX = opponent.x + (playerposition.x) * -1;
+        // let positionY = opponent.y ;
+        ctx.beginPath();
+       ctx.arc(mapValue(opponent.x, [0, 6000], [0,canvas.height/4]), mapValue(opponent.y, [0, 6000], [0,canvas.width/4]), 1, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.fillStyle = "red";
+        ctx.fill();
+    });
+}
 
-  minimapCtx.beginPath();
-  minimapCtx.rect(0, 0, mapWidth * scaleFactor, mapHeight * scaleFactor);
-  minimapCtx.stroke();
+function mapValue(inputValue, inputRange, outputRange) {
+  const inputDiff = inputRange[1] - inputRange[0];
+  const outputDiff = outputRange[1] - outputRange[0];
 
-  const playerX = playerposition.x * scaleFactor;
-  const playerY = playerposition.y * scaleFactor;
+  const percent = (inputValue - inputRange[0]) / inputDiff;
+  const outputValue = outputRange[0] + percent * outputDiff;
 
-  minimapCtx.beginPath();
-  minimapCtx.arc(playerX, playerY, 3, 0, 2 * Math.PI);
-  minimapCtx.fillStyle = "red";
-  minimapCtx.fill();
-
-  contentDiv.appendChild(minimapCanvas);
+  return outputValue;
 }

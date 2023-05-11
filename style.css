@@ -3,15 +3,21 @@ html, body {
   width: 100%;
   margin: 0px;
   text-align: center;
-}
+  position: relative;
+  background-image: 
+    url("./images/candybackground.png");
+    background-size: cover; 
+  /* overflow: hidden; */
 
-html {
-  background-image: url("aaaaav4.png");
-  background-size: cover;
+   background-repeat: no-repeat;
 }
-
 #myCanvas{
     border-style: solid;
+  border-color: black;
+     background-image: url("Map Background.png");
+  flex: 1;
+  /* position: relative;
+            z-index: 1; */
 }
 
 #content {
@@ -169,6 +175,18 @@ button:hover {
   top: 30%;
 }
 
+@media (max-width: 768px) {
+  #play-button {
+    width: 100%;
+    max-width: none;
+    font-size: 36px;
+  }
+}
+#rotateMessage{
+  visibility: hidden;
+  height: 0px;
+  width: 0px;
+}
 
 element.style {
     background-color: white;
@@ -182,5 +200,3 @@ element.style {
     font-family: Arial, sans-serif;
     z-index: 2;
 }
-
-

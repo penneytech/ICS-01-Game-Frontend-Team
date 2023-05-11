@@ -15,26 +15,27 @@ export function playerPawn() {
   let centerY = 300;
   let radius = 15;
   let scoreMultiplier = getGlobal("scoreMultiplier");
+  let playeroffset = getGlobal("playeroffset")
   let player = getGlobal("player");
 
   // Draw the circle
-  ctx.beginPath();
-  ctx.arc(centerX, centerY, radius + scoreMultiplier, 0, 2 * Math.PI);
-  ctx.fillStyle = "lightpink";
-  ctx.fill();
-  ctx.lineWidth = 2;
-  ctx.strokeStyle = "black";
+  // ctx.beginPath();
+  // ctx.arc(centerX, centerY, radius + scoreMultiplier, 0, 2 * Math.PI);
+  // ctx.fillStyle = "lightpink";
+  // ctx.fill();
+  // ctx.lineWidth = 2;
+  // ctx.strokeStyle = "black";
 
-  let imageX = 80;
-  let imageY = 80;
+  let imageX = 150;
+  let imageY = 150;
 
   let imageObj;
   imageObj = ShilaImageObj;
   if (imageObj) {
       ctx.drawImage(
         imageObj,
-        player.x - imageX / 2,
-        player.y - imageY / 2,
+        playeroffset.x - imageX / 2,
+        playeroffset.y - imageY / 2,
         imageX,
         imageY
       );
@@ -50,9 +51,9 @@ export function playerPawn() {
   // Draw text for score
   ctx.beginPath();
   ctx.fillStyle = "red";
-  ctx.font = "12px Arial";
+  ctx.font = "20px Times New Roman";
   let scoreTextWidth = ctx.measureText(player.playerScore).width;
-  ctx.fillText(player.playerScore, centerX - scoreTextWidth / 2, centerY);
+  ctx.fillText(player.playerScore, centerX - scoreTextWidth / 2, centerY + 80);
 
   // Draw text for username with shadow effect
   ctx.save(); // Save current context state
@@ -62,8 +63,9 @@ export function playerPawn() {
   ctx.shadowColor = "blue";
   ctx.beginPath();
   ctx.fillStyle = "black";
-  ctx.font = "12px Arial";
+  ctx.font = "20px Times New Roman";
   let userTextWidth = ctx.measureText(player.username).width;
-  ctx.fillText(player.username, centerX - userTextWidth / 2, centerY - 25);
+  ctx.fillText(player.username, centerX - userTextWidth / 2, centerY - 80);
   ctx.restore(); // Restore previous context state without shadow effect
+
 }
