@@ -15,7 +15,6 @@ export function drawMapOutline() {
     //const pattern = ctx.createPattern(img, "repeat");
     
 renderSprinkles();
-    
 
 }
 

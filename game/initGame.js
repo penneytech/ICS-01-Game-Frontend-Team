@@ -6,6 +6,7 @@ import { setGlobal } from "../globals.js";
 import startGame from './game.js';
 import { generateSprinkles } from "./generateSprinkles.js";
 
+
 export default function initGame() {
     // Get a reference to the content div
     const contentDiv = document.getElementById("content");
@@ -30,7 +31,6 @@ const ctx = canvas.getContext("2d");
     // Set the canvas and context as global variables
     // Generate Sprinkles
     generateSprinkles(6000, 6000, 2,5000)
-
     // Start the game
     startGame();
 

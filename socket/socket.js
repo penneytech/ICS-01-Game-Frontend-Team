@@ -10,7 +10,7 @@ import updateFood from './updateFood.js';
 import foodInit from './foodInit.js';
 import opponentMovement from './opponentMovement.js';
 // Connect to the server and set the socket global variable
-const socket = io("https://game-studio.matthewschulte1.repl.co");
+const socket = io("https://matts-game-studio-20.matthewschulte1.repl.co");
 setGlobal('socket', socket);
 
 // Actions that happen when the connection is established
@@ -48,4 +48,9 @@ socket.on("foodinit", (message) => {
 socket.on("opponentmovement", (message) => {
   console.log("Opponent movement:", message);
   opponentMovement(message);
+});
+
+socket.on("initopponents", (message) => {
+  console.log("Inital opponents:", message);
+  initopponents(message);
 });

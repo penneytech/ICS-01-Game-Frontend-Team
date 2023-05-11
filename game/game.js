@@ -10,8 +10,8 @@ import { food } from "./food.js";
 import { onKeyPress } from "./keyPress.js";
 import { drawMapOutline } from "./drawMapOutline.js";
 import { hitDetection } from "./hitDetection.js";
-// import { minimap } from "./minimap.js";
-
+import { minimap } from "./minimap.js";
+import { inGameLeaderboard } from "./ingameleaderboard.js";
 // import { playerOpponentTwo } from "./opponent 2.js";
 // Global page variables 
 let ctx;
@@ -21,7 +21,7 @@ export default function startGame() {
     // Get canvas and context
     ctx = getGlobal('ctx');
     canvas = getGlobal('canvas');
-
+    // minimap();
     // Start the game loop
     gameLoop();
   onKeyPress();
@@ -38,7 +38,8 @@ function gameLoop() {
     playerOpponent();
     playerPawn();
     hitDetection();
-
+minimap();
+  inGameLeaderboard();
     // Loop this function (this always stays at the bottom)
     requestAnimationFrame(gameLoop);
 }
