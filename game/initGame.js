@@ -13,7 +13,7 @@ export default function initGame() {
 
     // Clear the content div
     contentDiv.innerHTML = "";
-const canvas = document.createElement("canvas");
+    const canvas = document.createElement("canvas");
 
     // Set the canvas dimensions to 600 x 600
     canvas.width = 600;
@@ -24,13 +24,15 @@ const canvas = document.createElement("canvas");
 
     // Append the canvas to the content div
     contentDiv.appendChild(canvas);
-const ctx = canvas.getContext("2d");
-      setGlobal('canvas', canvas);
+    const ctx = canvas.getContext("2d");
+
+    setGlobal('canvas', canvas);
     setGlobal('ctx', ctx);
-  
+
     // Set the canvas and context as global variables
     // Generate Sprinkles
     generateSprinkles(6000, 6000, 2,5000)
+
     // Start the game
     startGame();
 

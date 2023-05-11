@@ -9,6 +9,8 @@ import loginSucceed from './loginSucceed.js';
 import updateFood from './updateFood.js';
 import foodInit from './foodInit.js';
 import opponentMovement from './opponentMovement.js';
+import { generateLeaderboard } from '../pages/generateLeaderboard.js';
+
 // Connect to the server and set the socket global variable
 const socket = io("https://matts-game-studio-20.matthewschulte1.repl.co");
 setGlobal('socket', socket);
@@ -45,6 +47,7 @@ socket.on("foodinit", (message) => {
   console.log("Food Init:", message);
   foodInit(message);
 });
+
 socket.on("opponentmovement", (message) => {
   console.log("Opponent movement:", message);
   opponentMovement(message);
@@ -53,4 +56,9 @@ socket.on("opponentmovement", (message) => {
 socket.on("initopponents", (message) => {
   console.log("Inital opponents:", message);
   initopponents(message);
+
+socket.on("leaderboarddata", (message) => {
+  console.log("Leaderboard data:", message);
+  setGlobal('leaderboarddata', message);
+  generateLeaderboard();
 });

@@ -7,11 +7,13 @@ import { getGlobal } from "../globals.js";
 import { playerPawn } from "./player.js";
 import { playerOpponent } from "./opponent.js";
 import { food } from "./food.js";
-import { onKeyPress } from "./keyPress.js";
+import { movePlayer } from "./movePlayer.js";
 import { drawMapOutline } from "./drawMapOutline.js";
 import { hitDetection } from "./hitDetection.js";
+
 import { minimap } from "./minimap.js";
 import { inGameLeaderboard } from "./ingameleaderboard.js";
+
 // import { playerOpponentTwo } from "./opponent 2.js";
 // Global page variables 
 let ctx;
@@ -32,14 +34,13 @@ function gameLoop() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     drawMapOutline();
-    
     onKeyPress();
     food();
     playerOpponent();
     playerPawn();
     hitDetection();
-minimap();
-  inGameLeaderboard();
+    minimap();
+    inGameLeaderboard();
     // Loop this function (this always stays at the bottom)
     requestAnimationFrame(gameLoop);
 }
