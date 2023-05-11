@@ -10,7 +10,6 @@ import { food } from "./food.js";
 import { movePlayer } from "./movePlayer.js";
 import { drawMapOutline } from "./drawMapOutline.js";
 import { hitDetection } from "./hitDetection.js";
-
 import { minimap } from "./minimap.js";
 import { inGameLeaderboard } from "./ingameleaderboard.js";
 

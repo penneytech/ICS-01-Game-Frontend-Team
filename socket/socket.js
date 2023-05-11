@@ -58,6 +58,11 @@ socket.on("initopponents", (message) => {
   initopponents(message);
 });
 
+socket.on("ingameleaderboard", (message) => {
+  console.log("ingameleaderboard:", message);
+  setGlobal('ingameleaderboard', message)
+});
+
 socket.on("leaderboarddata", (message) => {
   console.log("Leaderboard data:", message);
   setGlobal('leaderboarddata', message);

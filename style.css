@@ -6,17 +6,15 @@ html, body {
 }
 
 html {
-  background-image: url("aaaaav4.png");
+  background-image: url("images/aaaaav4.png");
   background-size: cover;
 }
 
 #myCanvas{
     border-style: solid;
   border-color: black;
-     background-image: url("Map Background.png");
+     background-image: url("images/Map Background.png");
   flex: 1;
-  /* position: relative;
-            z-index: 1; */
 }
 
 #content {

@@ -2,10 +2,10 @@ import { getGlobal } from "../globals.js";
 let ShilaImageUrl = "game/Characters/Shila.png";
 let ShilaImageObj = new Image();
 
-ShilaImageObj.onload = function() {
-    // Only draw the image when it's fully loaded
-    playerPawn();
-}
+// ShilaImageObj.onload = function() {
+//     // Only draw the image when it's fully loaded
+//     playerPawn();
+// }
 
 ShilaImageObj.src = ShilaImageUrl;
 
@@ -17,14 +17,6 @@ export function playerPawn() {
   let scoreMultiplier = getGlobal("scoreMultiplier");
   let playeroffset = getGlobal("playeroffset")
   let player = getGlobal("player");
-
-  // Draw the circle
-  // ctx.beginPath();
-  // ctx.arc(centerX, centerY, radius + scoreMultiplier, 0, 2 * Math.PI);
-  // ctx.fillStyle = "lightpink";
-  // ctx.fill();
-  // ctx.lineWidth = 2;
-  // ctx.strokeStyle = "black";
 
   let imageX = 150;
   let imageY = 150;
