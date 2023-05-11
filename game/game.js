@@ -26,7 +26,7 @@ export default function startGame() {
     // minimap();
     // Start the game loop
     gameLoop();
-  onKeyPress();
+    movePlayer();
 }
 
 function gameLoop() {
@@ -34,7 +34,7 @@ function gameLoop() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     drawMapOutline();
-    onKeyPress();
+    movePlayer();
     food();
     playerOpponent();
     playerPawn();

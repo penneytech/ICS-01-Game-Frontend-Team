@@ -40,7 +40,7 @@ socket.on("loginSucceed", (message) => {
 // When a message is received from the server
 socket.on("foodupdate", (message) => {
   console.log("Food Update:", message);
-updateFood(message);
+  updateFood(message);
 });
 
 socket.on("foodinit", (message) => {
@@ -56,6 +56,7 @@ socket.on("opponentmovement", (message) => {
 socket.on("initopponents", (message) => {
   console.log("Inital opponents:", message);
   initopponents(message);
+});
 
 socket.on("leaderboarddata", (message) => {
   console.log("Leaderboard data:", message);

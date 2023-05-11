@@ -2,7 +2,7 @@ import { getGlobal, setGlobal } from '../globals.js';
 
 export function generateLeaderboard(){
 
-    const leaderboarddata = getGlobal('leaderboarddata');
+  const leaderboarddata = getGlobal('leaderboarddata');
 
   // Create the table element
   const tableElem = document.createElement('table');
@@ -26,6 +26,9 @@ export function generateLeaderboard(){
   headerRow.appendChild(nameHeader);
   headerRow.appendChild(pointsHeader);
   tableElem.appendChild(headerRow);
+
+  try {
+    
 
   // Loop through the leaderboarddata array and create a new row for each item
   leaderboarddata.forEach((item, index) => { // add an index parameter to the forEach loop
@@ -51,6 +54,8 @@ export function generateLeaderboard(){
     let leaderboarddiv = document.getElementById('leaderboarddiv');
     leaderboarddiv.appendChild(tableElem);
   });
-
+} catch (error) {
+    console.log("[getleaderboardata]:", error)
+}
 
 }

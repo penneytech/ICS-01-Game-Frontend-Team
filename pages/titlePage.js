@@ -1,4 +1,5 @@
 import { getGlobal, setGlobal } from '../globals.js';
+import initGame from '../game/initGame.js';
 
 export function TitlePage() {
   const contentDiv = document.getElementById('content');
