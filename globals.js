@@ -118,6 +118,11 @@ const globals = {
   opponentheight: 30,
   userstats: [290811, 2389901, 16782, 19, 'test'],
   leaderboarddata: sampleleaderboarddata,
+  ingameleaderboard: [
+    { name: "Player 1", score: 100 },
+    { name: "Player 2", score: 200 },
+    { name: "Player 3", score: 300 },
+],
 };
 
 // Define a function to set a global variable

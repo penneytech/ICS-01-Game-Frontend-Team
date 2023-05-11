@@ -3,14 +3,13 @@ html, body {
   width: 100%;
   margin: 0px;
   text-align: center;
-  position: relative;
-  background-image: 
-    url("./images/candybackground.png");
-    background-size: cover; 
-  /* overflow: hidden; */
-
-   background-repeat: no-repeat;
 }
+
+html {
+  background-image: url("aaaaav4.png");
+  background-size: cover;
+}
+
 #myCanvas{
     border-style: solid;
   border-color: black;
