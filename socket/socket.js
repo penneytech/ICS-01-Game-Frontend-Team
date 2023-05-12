@@ -15,7 +15,7 @@ const socket = io('http://localhost:3000');
 
 import updateFood from './updateFood.js';
 import foodInit from './foodInit.js';
-import opponentMovement from '../game/opponentMovement.js';
+import opponentMovement from '../opponent/opponentMovement.js';
 import { generateLeaderboard } from '../pages/generateLeaderboard.js';
 import { initopponents } from './initopponents.js';
 //import { inGameLeaderboard } from '../game/ingameleaderboard.js';
@@ -46,12 +46,12 @@ socket.on("loginSucceed", (message) => {
 
 // When a message is received from the server
 socket.on("foodupdate", (message) => {
-    console.log("Food Update:", message);
+    //console.log("Food Update:", message);
     updateFood(message);
 });
 
 socket.on("foodinit", (message) => {
-    console.log("Food Init:", message);
+    //console.log("Food Init:", message);
     foodInit(message);
 });
 

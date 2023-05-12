@@ -43,6 +43,10 @@ export function LoginDialogue() {
     const passwordinput = document.getElementById("password");
     const password = passwordinput.value;
 
+    const player = getGlobal('player');
+    player.username = usernameinput.value;
+    setGlobal('player', player);
+    
     // Log the login information to the console
     console.log("[login.js]: Sent Login Information:", username, password);
 

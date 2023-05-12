@@ -17,7 +17,7 @@ export function initopponents(message) {
     
     opponents.forEach((opponent) => {
         // add users to the map
-        userMap.set(opponent.username, { x: opponent.x, y: opponent.y, type: opponent.type, score: opponent.currentscore });
+        userMap.set(opponent.username, { x: opponent.x, y: opponent.y, type: opponent.type, currentscore: opponent.currentscore });
     });
 
     // delete a user by key

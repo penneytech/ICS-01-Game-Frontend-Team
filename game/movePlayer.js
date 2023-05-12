@@ -159,6 +159,4 @@ export function movePlayer() {
         setGlobal('playerposition', { "x": x, "y": y })
         socket.emit("updateclientposition", { 'username': getGlobal('player').username, "x": x, "y": y })
     }
-
-    food();
 }

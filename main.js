@@ -10,5 +10,5 @@ import { initopponents } from './socket/initopponents.js';
 initopponents();
 
 import initGame from './game/initGame.js';
-initGame();
+//initGame();
 

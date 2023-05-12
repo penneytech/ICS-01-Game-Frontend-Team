@@ -65,8 +65,10 @@ export function playerOpponent() {
   let ctx = getGlobal("ctx");
 
   userMap.forEach((user, key) => {
-    //console.log(user)
-    
+
+    if (key == getGlobal("player").username)
+      return;
+
     let playerposition = getGlobal("playerposition");
     let playeroffset = getGlobal("playeroffset");
     let positionX = user.x + (playerposition.x - playeroffset.x) * -1;
@@ -75,7 +77,7 @@ export function playerOpponent() {
     let imageY = 150;
 
     let imageObj;
-
+console.log(user)
     switch (user.type) {
       case "Shila":
         imageObj = ShilaImageObj;
@@ -119,12 +121,16 @@ export function playerOpponent() {
       case "Arlo":
         imageObj = ArloImageObj;
         break;
+      case '':
+        imageObj = ArloImageObj;
+        break;
       default:
         imageObj = ArloImageObj;
         break;
     }
 
     if (imageObj) {
+      //console.log("DRAWING IMAGE FOR ", key, user, im)
       ctx.drawImage(
         imageObj,
         positionX - imageX / 2,
@@ -145,7 +151,7 @@ export function playerOpponent() {
     ctx.beginPath();
     ctx.fillStyle = "black";
     ctx.font = "20px Times New Roman";
-    let scoreTextWidth = ctx.measureText(user.oppscore).width;
+    let scoreTextWidth = ctx.measureText(user.currentscore).width;
     ctx.fillText(user.score, positionX - scoreTextWidth / 2, positionY + 80);
 
     // Draw text for username with shadow effect
