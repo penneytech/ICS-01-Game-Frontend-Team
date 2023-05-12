@@ -12,3 +12,5 @@ initopponents();
 import initGame from './game/initGame.js';
 //initGame();
 
+import { TitlePage } from './pages/titlePage.js';
+TitlePage();

@@ -18,6 +18,8 @@ import foodInit from './foodInit.js';
 import opponentMovement from '../opponent/opponentMovement.js';
 import { generateLeaderboard } from '../pages/generateLeaderboard.js';
 import { initopponents } from './initopponents.js';
+import opponentRemove from '../opponent/opponentRemove.js';
+import generateUserStats from '../pages/generateUserStats.js'
 //import { inGameLeaderboard } from '../game/ingameleaderboard.js';
 
 setGlobal('socket', socket);
@@ -62,7 +64,7 @@ socket.on("updateopponentposition", (message) => {
 socket.on("initposition", (message) => {
     console.log("Recieved Initial Position:", message);
     let playerposition = getGlobal('playerposition');
-    setGlobal('playerposition', {"x": message.x, "y": message.y});
+    setGlobal('playerposition', { "x": message.x, "y": message.y });
 });
 
 socket.on("initopponents", (message) => {
@@ -70,13 +72,25 @@ socket.on("initopponents", (message) => {
     initopponents(message);
 });
 
+socket.on("removeopponent", (message) => {
+    console.log("Remove opponent:", message);
+    opponentRemove(message);
+});
+
 socket.on("ingameleaderboard", (message) => {
-  console.log("ingameleaderboard:", message);
-  setGlobal('ingameleaderboard', message)
+    console.log("ingameleaderboard:", message);
+    setGlobal('ingameleaderboard', message)
 });
 
 socket.on("leaderboarddata", (message) => {
-  console.log("Leaderboard data:", message);
-  setGlobal('leaderboarddata', message);
-  generateLeaderboard();
+    console.log("Leaderboard data:", message);
+    setGlobal('leaderboarddata', message);
+    generateLeaderboard();
 });
+
+socket.on("userstatsdata", (message) => {
+    console.log("userstatsdata:", message);
+    setGlobal('userstats', message);
+    generateUserStats();
+});
+

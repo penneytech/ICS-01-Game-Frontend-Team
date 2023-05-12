@@ -177,3 +177,17 @@ button:hover {
   top: 30%;
 }
 
+#customize {
+  display: flex;
+  width: 350px;
+  height: 200px;
+  background-color: white;
+}
+
+#arrow1, #head, #arrow2 {
+  flex: 1;
+  height: 100%,;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
