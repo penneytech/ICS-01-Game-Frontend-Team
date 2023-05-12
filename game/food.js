@@ -5,6 +5,10 @@ let CanRedImageUrl = ["./images/CanRed.png"];
 let CanRedImageObj = new Image();
 CanRedImageObj.src = CanRedImageUrl;
 
+let CanLoliImageUrl = ["./images/CanLoli.png"];
+let CanLoliImageObj = new Image();
+CanLoliImageObj.src = CanLoliImageUrl;
+
 let CanCookieImageUrl = ["./images/CanCookie.png"];
 let CanCookieImageObj = new Image();
 CanCookieImageObj.src = CanCookieImageUrl;
@@ -56,6 +60,9 @@ export function food() {
         break;
       case "CanRainbow":
         imageObj = CanMacRainbowImageObj;
+        break;
+        case "Lollypop":
+        imageObj = CanLoliImageObj;
         break;
       case "CanMacRed":
         imageObj = CanMacRedimageObj;

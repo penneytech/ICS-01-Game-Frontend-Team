@@ -1,6 +1,6 @@
 import { getGlobal } from "../globals.js";
 
-export function inGameLeaderboard(){
+export default function inGameLeaderboard(){
   let ctx = getGlobal("ctx");
   // Define an array of names and scores
 let leaderboard = [

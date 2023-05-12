@@ -11,8 +11,9 @@ ShilaImageObj.src = ShilaImageUrl;
 
 export function playerPawn() {
   let ctx = getGlobal("ctx");
-  let centerX = 300;
-  let centerY = 300;
+  let canvas = getGlobal("canvas");
+  let centerX = canvas.width/2;
+  let centerY = canvas.height/2;
   let radius = 15;
   let scoreMultiplier = getGlobal("scoreMultiplier");
   let playeroffset = getGlobal("playeroffset")
