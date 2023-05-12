@@ -118,16 +118,21 @@ const globals = {
   opponentheight: 30,
   userstats: [290811, 2389901, 16782, 19, 'test'],
   leaderboarddata: sampleleaderboarddata,
+  ingameleaderboard: [
+    { name: "Player 1", score: 100 },
+    { name: "Player 2", score: 200 },
+    { name: "Player 3", score: 300 },
+],
 };
 
 // Define a function to set a global variable
 export function setGlobal(name, value) {
-  //console.log(`Setting global variable '${name}' to '${value}'`);
-  globals[name] = value;
+    //console.log(`Setting global variable '${name}' to '${value}'`);
+    globals[name] = value;
 }
 
 // Define a function to get a global variable
 export function getGlobal(name) {
- // console.log(`Getting global variable '${name}': '${globals[name]}'`);
-  return globals[name];
+    // console.log(`Getting global variable '${name}': '${globals[name]}'`);
+    return globals[name];
 }

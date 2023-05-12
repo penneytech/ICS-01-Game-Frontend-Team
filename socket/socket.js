@@ -6,14 +6,19 @@ This code connects to the server and sets the socket global variable using the i
 import { getGlobal, setGlobal } from '../globals.js';
 import loginFail from './loginFail.js';
 import loginSucceed from './loginSucceed.js';
+import leaderBoardData from '../pages/leaderBoardData.js';
+
+
+// Connect to the server and set the socket global variable
+const socket = io("https://matts-game-studio-20.matthewschulte1.repl.co");
+
 import updateFood from './updateFood.js';
 import foodInit from './foodInit.js';
 import opponentMovement from './opponentMovement.js';
 import { generateLeaderboard } from '../pages/generateLeaderboard.js';
 import { initopponents } from './initopponents.js';
 //import { inGameLeaderboard } from '../game/ingameleaderboard.js';
-// Connect to the server and set the socket global variable
-const socket = io("https://matts-game-studio-20.matthewschulte1.repl.co");
+
 setGlobal('socket', socket);
 
 // Actions that happen when the connection is established
@@ -59,13 +64,13 @@ socket.on("initopponents", (message) => {
     initopponents(message);
 });
 
-socket.on("leaderboarddata", (message) => {
-    console.log("Leaderboard data:", message);
-    setGlobal('leaderboarddata', message);
-    generateLeaderboard();
+socket.on("ingameleaderboard", (message) => {
+  console.log("ingameleaderboard:", message);
+  setGlobal('ingameleaderboard', message)
 });
 
-// socket.on("inGameLeaderboard", (message) => {
-//     console.log("ingameleaderboard opponents:", message);
-//     inGameLeaderboard(message);
-// });
+socket.on("leaderboarddata", (message) => {
+  console.log("Leaderboard data:", message);
+  setGlobal('leaderboarddata', message);
+  generateLeaderboard();
+});
