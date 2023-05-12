@@ -23,7 +23,8 @@ let x = 100;
 let y = 100;
 let speed = 10;
 
-// let opponent = playerOpponent();
+let playerpositionold = {};
+
 // Add event listeners for key presses
 document.addEventListener("keydown", function(event) {
 
@@ -149,8 +150,16 @@ export function movePlayer() {
 
     }
 
-    // console.log("x:", x, "y:", y);
     setGlobal('playerposition', { "x": x, "y": y })
-    //console.log("Player Pos Set:", getGlobal('playerposition'))
+
+    // Check to see if playerposition has updated. 
+
+    if (JSON.stringify(playerpositionold) !== JSON.stringify({ "x": x, "y": y })) {
+        let socket = getGlobal('socket');
+        console.log("EMIT NEW POSITION", { "x": x, "y": y });
+        playerpositionold = { "x": x, "y": y };
+        socket.emit("updateclientposition", {'username': "testuser", "x": x, "y": x})
+    }
+
     food();
 }

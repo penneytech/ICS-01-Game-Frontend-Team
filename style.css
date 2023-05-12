@@ -13,7 +13,7 @@ html {
 #myCanvas{
     border-style: solid;
   border-color: black;
-     background-image: url("Map Background.png");
+     background-image: url("images/Map Background.png");
   background-size: cover;
   flex: 1;
 

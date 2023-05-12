@@ -10,7 +10,8 @@ import leaderBoardData from '../pages/leaderBoardData.js';
 
 
 // Connect to the server and set the socket global variable
-const socket = io("https://matts-game-studio-20.matthewschulte1.repl.co");
+//const socket = io("https://matts-game-studio-20.matthewschulte1.repl.co");
+const socket = io('http://localhost:3000');
 
 import updateFood from './updateFood.js';
 import foodInit from './foodInit.js';
