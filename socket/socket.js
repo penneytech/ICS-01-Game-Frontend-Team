@@ -6,7 +6,7 @@ This code connects to the server and sets the socket global variable using the i
 import { getGlobal, setGlobal } from '../globals.js';
 import loginFail from './loginFail.js';
 import loginSucceed from './loginSucceed.js';
-import leaderBoardData from '../pages/leaderBoardData.js';
+// import leaderBoardData from '../pages/leaderBoardData.js';
 
 
 // Connect to the server and set the socket global variable
@@ -15,7 +15,7 @@ const socket = io('http://localhost:3000');
 
 import updateFood from './updateFood.js';
 import foodInit from './foodInit.js';
-import opponentMovement from './opponentMovement.js';
+import opponentMovement from '../game/opponentMovement.js';
 import { generateLeaderboard } from '../pages/generateLeaderboard.js';
 import { initopponents } from './initopponents.js';
 //import { inGameLeaderboard } from '../game/ingameleaderboard.js';
@@ -55,7 +55,7 @@ socket.on("foodinit", (message) => {
     foodInit(message);
 });
 
-socket.on("opponentmovement", (message) => {
+socket.on("updateopponentposition", (message) => {
     console.log("Opponent movement:", message);
     opponentMovement(message);
 });

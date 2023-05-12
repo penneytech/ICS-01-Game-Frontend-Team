@@ -7,5 +7,5 @@ import { LoginDialogue } from './pages/loginDialogue.js'
 LoginDialogue();
 
 import initGame from './game/initGame.js';
-initGame();
+//initGame();
 

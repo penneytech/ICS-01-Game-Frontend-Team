@@ -20,9 +20,11 @@ const globals = {
   playeroffset: {"x": 300, "y": 350}, // Offset from the physical canvas
   playerwidth: 30,
   playerheight: 30,
+
   //multipier variables 
   scoreMultiplier: 0,
   player:  {"username": "five star", "playerScore": 3287},
+
     //food variables
   foodarr: [],
   foodwidth: 30,
