@@ -1,0 +1,19 @@
+// initialize an empty map to store users
+const userMap = new Map();
+
+// add users to the map
+userMap.set('john', {name: 'John', age: 25});
+userMap.set('mary', {name: 'Mary', age: 30});
+userMap.set('peter', {name: 'Peter', age: 27});
+
+// delete a user by key
+userMap.delete('john');
+
+// loop through all remaining users in the map
+userMap.forEach((user, key) => {
+  console.log(`${key}: ${user.name} (${user.age})`);
+});
+/* Output:
+mary: Mary (30)
+peter: Peter (27)
+*/

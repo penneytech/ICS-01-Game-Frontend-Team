@@ -3,11 +3,18 @@ html, body {
   width: 100%;
   margin: 0px;
   text-align: center;
-  background-image: url("candybackground.png");
+}
+
+html {
+  background-image: url("images/aaaaav4.png");
+  background-size: cover;
 }
 
 #myCanvas{
     border-style: solid;
+  border-color: black;
+     background-image: url("images/Map Background.png");
+  flex: 1;
 }
 
 #content {
@@ -18,9 +25,12 @@ html, body {
 }
 
 #loginmessagediv {
-    color: #ae00ff;
+    color: #f7f7f7;
     font-size: 20px;
     margin-top: 20px;
+    margin-bottom: 20px;
+    text-shadow: 0px 0px 2px #000000;
+    font-weight: bold;
 }
 
 #logindiv {
@@ -30,41 +40,40 @@ html, body {
   flex-direction: column;
   justify-content: center; /* Center vertically */
   align-items: center; /* Center horizontally */
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 3px white; /* added box-shadow property */
+  padding: 20px;
+  background-color: white;
+  border-radius: 3px;
+  width: 300px;
 }
 
 input {
+    font-family: Arial, sans-serif;
     margin: 8px;
     font-size: 18px;
     background-color: #333;
     color: white;
     padding: 6px;
+    border-radius: 5px;
+    width: 285px;
 }
 
 #page-title {
   font-family: fantasy;
   font-size: 48px;
-  position: relative;
-  top: 5%;
-  left: 50%;
-  transform: translateX(-50%);
+  font-weight: bold;
+  letter-spacing: 2px;
   z-index: 1;
-  color: #black;
+  color: #ffbb1c;
 }
 
-@media (min-width: 769px) {
-  #page-title {
-    top: 2%;
-  }
-}
-
-@media (max-width: 768px) {
-  #page-title {
-    top: 1%;
-  }
+#sendButton {
+  background-color: #12ce12;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  width: 300px;
+  border-radius: 5px;
 }
 
 button {
@@ -89,28 +98,13 @@ button:hover {
 }
 
 #my-leaderboard-table {
-  position: absolute;
-  bottom: 40%;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  width: calc(100% - 40px); 
+  width: 340px;
   max-width: 400px; 
   background-color: white;
   font-family: monospace;
-}
-
-@media (max-width: 768px) {
-  #my-leaderboard-table {
-    position: absolute;
-    bottom: auto;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: calc(100% - 40px); 
-    max-width: 400px; 
-    background-color: white;
-    font-family: monospace;
-  }
+  box-shadow: 0 0 0 3px white; /* added box-shadow property */
+  border-radius: 3px;
+  margin-bottom: 35px;
 }
 
 #my-leaderboard-table tr:first-child {
@@ -164,21 +158,18 @@ button:hover {
 }
 
 #play-button {
-  position: absolute;
-  top: 22%;
-  left: 50%;
-  transform: translateX(-50%);
   font-family: Arial, sans-serif;
   font-weight: bold;
-  width: 50%;
-  max-width: 300px;
+  position: relative;
+  width: 350px;
   padding: 20px;
-  background-color: #00fb6f;
+  background-color: #12ce12;
   color: white;
   font-size: 24px;
   text-align: center;
-  border: 5px solid black;
-  border-radius: 20px;
+  border-radius: 5px;
+  margin: 0 auto;
+  top: 30%;
 }
 
 @media (max-width: 768px) {
@@ -187,4 +178,22 @@ button:hover {
     max-width: none;
     font-size: 36px;
   }
+}
+#rotateMessage{
+  visibility: hidden;
+  height: 0px;
+  width: 0px;
+}
+
+element.style {
+    background-color: white;
+    padding: 25px;
+}
+#customization {
+    margin-top: 40px;
+    width: 300px;
+    height: 150px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    z-index: 2;
 }

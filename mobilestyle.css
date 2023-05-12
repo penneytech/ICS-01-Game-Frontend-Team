@@ -1,0 +1,49 @@
+/* For screens 800px and under */
+ @media screen and (max-width: 850px) {
+    /* For portrait orientation */
+     @media screen and (orientation: landscape) {
+         html, body{
+             height: 100%;
+             width: 100%;
+            overflow: hidden;
+         }
+
+         #content {
+             margin: 0px;
+             height: 100%;
+           width: 100%;
+           display: flex;
+        }
+         #myCanvas {
+             margin: 0px;
+             height: 100%;
+           width: 100%;
+           flex: 1;
+        }
+   
+         
+  @media screen and (orientation: portrait){
+       #rotateMessage{
+         background-color: #f2e2cf;
+         visibility: visible;
+         height: 100%;
+         width: 100%;
+         font-size: 50px;
+         color: #000000;
+         background-image: none;
+         text-align: center;
+         vertical-align: middle;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+       }
+       
+#showGame {
+     visibility: hidden;
+         height:auto;
+         width: auto;
+  display: none;
+}
+  }
+ 

@@ -33,7 +33,7 @@ export function LoginDialogue() {
   sendButton.innerHTML = 'Connect';
   loginDiv.appendChild(sendButton);
 
-  sendButton.onclick = function() {
+  sendButton.onclick = function () {
     // Get the socket global variable
     const socket = getGlobal('socket');
 
@@ -51,6 +51,7 @@ export function LoginDialogue() {
       username: username,
       password: password
     });
+
   };
 
   // Create a div that displays a message if login fails
@@ -60,4 +61,10 @@ export function LoginDialogue() {
   // Append the login form and message div to the content div
   contentDiv.appendChild(loginDiv);
   contentDiv.appendChild(loginMessageDiv);
+
+  // Empty div for leaderboard data
+  let leaderboarddiv = document.createElement('div');
+  leaderboarddiv.id = 'leaderboarddiv';
+  contentDiv.appendChild(leaderboarddiv);
+
 }

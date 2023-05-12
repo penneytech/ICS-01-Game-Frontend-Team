@@ -1,8 +1,11 @@
-import { getGlobal } from '../globals.js';
 import { LoginDialogue } from './loginDialogue.js';
+import { getGlobal, setGlobal } from '../globals.js';
+import initGame from '../game/initGame.js';
 
-const contentDiv = document.getElementById('content');
-const playButton = document.createElement('button');
+export function TitlePage() {
+  const contentDiv = document.getElementById('content');
+  contentDiv.innerHTML = ""; // Clear content div 
+  const playButton = document.createElement('button');
 
 playButton.textContent = 'PLAY';
 playButton.id = 'play-button';
@@ -24,3 +27,4 @@ leadboarddiv.id = "leadboarddiv";
 contentDiv.appendChild(leadboarddiv);
 
 
+}

@@ -1,44 +1,93 @@
 import { getGlobal } from "../globals.js";
-
 //Initialize Food Images
-        // Define the image URL and preload the image
-        let imageUrl = "./game/CanRed.png";
-        let imageObj = new Image();
-        imageObj.src = imageUrl;
+// Define the image URL and preload the image
+let CanRedImageUrl = ["./images/CanRed.png"];
+let CanRedImageObj = new Image();
+CanRedImageObj.src = CanRedImageUrl;
 
+let CanCookieImageUrl = ["./images/CanCookie.png"];
+let CanCookieImageObj = new Image();
+CanCookieImageObj.src = CanCookieImageUrl;
 
-// let foodnum;
+let CanMacBlueImageUrl = ["./images/CanMacBlue.png"];
+let CanMacBlueImageObj = new Image();
+CanMacBlueImageObj.src = CanMacBlueImageUrl;
+
+let CanRainbowImageUrl = ["./images/CanRainbow.png"];
+let CanMacRainbowImageObj = new Image();
+CanMacRainbowImageObj.src = CanRainbowImageUrl;
+
+let CanMacRedimageUrl = ["./images/CanMacRed.png"];
+let CanMacRedimageObj = new Image();
+CanMacRedimageObj.src = CanMacRedimageUrl;
+
+let CanGreenimageUrl = ["./images/CanGreen.png"];
+let CanGreenImageObj = new Image();
+CanGreenImageObj.src = CanGreenimageUrl;
+
 export function food() {
   //SAMPLE FOOD ARRAY
-  const foodarr = [ 
-    {"x": 454, "y": 199},
-     {"x": 17, "y": 143},
-    {"x": 174, "y": 3},
-    {"x": 234, "y": 17},
-    {"x": 200, "y": 123},
-]
-  let offsets = getGlobal('playeroffset');
-    
-  foodarr.forEach((food, index) => {
-          
-    let playerposition = getGlobal('playerposition');
-    let playeroffset = getGlobal('playeroffset');
-   
+  const foodarr = getGlobal("foodarr");
+
+  let scoreMultiplier = getGlobal("scoreMultiplier");
+
+  foodarr.forEach((food) => {
+    let playerposition = getGlobal("playerposition");
+    let playeroffset = getGlobal("playeroffset");
+
     let positionX = food.x + (playerposition.x - playeroffset.x) * -1;
-    
+
     let positionY = food.y + (playerposition.y - playeroffset.y) * -1;
-      
+    let radius = 15;
     let ctx = getGlobal("ctx");
-    ctx.beginPath();
-    ctx.arc(positionX,positionY, 10, 0, 2 * Math.PI);
 
-    ctx.drawImage(imageObj, positionX - 50, positionY -50, 100, 100);
+    let imageX = 25 - scoreMultiplier;
+    let imageY = 25 - scoreMultiplier;
+    let imageObj;
+    switch (food.Type) {
+      case "CanRed":
+        imageObj = CanRedImageObj;
+        break;
+      case "CanCookie":
+        imageObj = CanCookieImageObj;
+        break;
+      case "Canmacblue":
+        imageObj = CanMacBlueImageObj;
+        break;
+      case "CanRainbow":
+        imageObj = CanMacRainbowImageObj;
+        break;
+      case "CanMacRed":
+        imageObj = CanMacRedimageObj;
+        break;
+      case "CanGreen":
+        imageObj = CanGreenImageObj;
+        break;
+      default:
+        imageObj = null;
+        break;
+    }
 
-  })
+    if (imageObj) {
+      ctx.drawImage(
+        imageObj,
+        positionX - imageX / 2,
+        positionY - imageY / 2,
+        imageX,
+        imageY
+      );
+    } else {
+      ctx.beginPath();
+      ctx.arc(
+        positionX,
+        positionY,
+        radius - scoreMultiplier * 0.5,
+        0,
+        2 * Math.PI
+      );
+      ctx.fillStyle = "red";
+      ctx.fill();
+    }
 
-  
-
-    
-}      
-
-
+  });
+}
