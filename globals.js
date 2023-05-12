@@ -135,6 +135,6 @@ export function setGlobal(name, value) {
 
 // Define a function to get a global variable
 export function getGlobal(name) {
-    // console.log(`Getting global variable '${name}': '${globals[name]}'`);
+    //console.log(`Getting global variable '${name}': '${globals[name]}'`);
     return globals[name];
 }

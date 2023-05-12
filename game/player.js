@@ -1,12 +1,6 @@
 import { getGlobal } from "../globals.js";
 let ShilaImageUrl = "game/Characters/Shila.png";
 let ShilaImageObj = new Image();
-
-// ShilaImageObj.onload = function() {
-//     // Only draw the image when it's fully loaded
-//     playerPawn();
-// }
-
 ShilaImageObj.src = ShilaImageUrl;
 
 export function playerPawn() {

@@ -56,8 +56,13 @@ socket.on("foodinit", (message) => {
 });
 
 socket.on("updateopponentposition", (message) => {
-    console.log("Opponent movement:", message);
     opponentMovement(message);
+});
+
+socket.on("initposition", (message) => {
+    console.log("Recieved Initial Position:", message);
+    let playerposition = getGlobal('playerposition');
+    setGlobal('playerposition', {"x": message.x, "y": message.y});
 });
 
 socket.on("initopponents", (message) => {

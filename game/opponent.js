@@ -120,7 +120,7 @@ export function playerOpponent() {
         imageObj = ArloImageObj;
         break;
       default:
-        imageObj = null;
+        imageObj = ArloImageObj;
         break;
     }
 

@@ -22,7 +22,7 @@ let canvas = getGlobal('canvas');
         // let positionX = user.x + (playerposition.x) * -1;
         // let positionY = user.y ;
         ctx.beginPath();
-       ctx.arc(mapValue(user.x, [0, 6000], [0,canvas.height/4]), mapValue(user.y, [0, 6000], [0,canvas.width/4]), 1, 0, 2 * Math.PI);
+       ctx.arc(mapValue(user.x, [0, 6000], [0,canvas.height/4]), mapValue(user.x, [0, 6000], [0,canvas.width/4]), 1, 0, 2 * Math.PI);
         ctx.fill();
         ctx.fillStyle = "red";
         ctx.fill();

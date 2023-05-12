@@ -6,7 +6,7 @@ let jd;
 let joystickPosition = "C";
 let iscentered = true;
 
-var Joy1 = new JoyStick('joy1Div', {}, function(stickData) {
+var Joy1 = new JoyStick('joy1Div', {}, function (stickData) {
     jd = stickData.cardinalDirection;
     console.log(jd);
     joystickPosition = jd;
@@ -19,15 +19,12 @@ let rightPressed = false;
 let upPressed = false;
 let downPressed = false;
 
-let x = 100;
-let y = 100;
 let speed = 10;
 
-let playerpositionold = {};
+let playerpositionold = { "x": 100, "y": 100 };
 
 // Add event listeners for key presses
-document.addEventListener("keydown", function(event) {
-
+document.addEventListener("keydown", function (event) {
     if (event.code === "KeyA") {
         leftPressed = true;
     } else if (event.code === "KeyD") {
@@ -40,7 +37,7 @@ document.addEventListener("keydown", function(event) {
 });
 
 
-document.addEventListener("keyup", function(event) {
+document.addEventListener("keyup", function (event) {
     if (event.code === "KeyA") {
         leftPressed = false;
     } else if (event.code === "KeyD") {
@@ -53,6 +50,9 @@ document.addEventListener("keyup", function(event) {
 });
 
 export function movePlayer() {
+
+    let x = getGlobal('playerposition').x;
+    let y = getGlobal('playerposition').y;
 
     // Call Joystick function
 
@@ -69,7 +69,7 @@ export function movePlayer() {
             downPressed = true;
             rightPressed = false;
             upPressed = false;
-              iscentered = false;
+            iscentered = false;
             break;
         case "S":
             downPressed = true;
@@ -84,7 +84,7 @@ export function movePlayer() {
             downPressed = true;
             leftPressed = false;
             upPressed = false;
-              iscentered = false;
+            iscentered = false;
             break;
 
         case "E":
@@ -92,7 +92,7 @@ export function movePlayer() {
             leftPressed = false;
             upPressed = false;
             downPressed = false;
-              iscentered = false;
+            iscentered = false;
             break;
 
         case "NE":
@@ -100,7 +100,7 @@ export function movePlayer() {
             upPressed = true;
             leftPressed = false;
             downPressed = false;
-              iscentered = false;
+            iscentered = false;
             break;
 
         case "N":
@@ -109,7 +109,7 @@ export function movePlayer() {
             rightPressed = false;
             downPressed = false;
             console.log("NORTH")
-              iscentered = false;
+            iscentered = false;
             break;
 
         case "NW":
@@ -117,7 +117,7 @@ export function movePlayer() {
             leftPressed = true;
             rightPressed = false;
             downPressed = false;
-              iscentered = false;
+            iscentered = false;
             break;
 
         case "C":
@@ -150,15 +150,14 @@ export function movePlayer() {
 
     }
 
-    setGlobal('playerposition', { "x": x, "y": y })
-
     // Check to see if playerposition has updated. 
 
     if (JSON.stringify(playerpositionold) !== JSON.stringify({ "x": x, "y": y })) {
         let socket = getGlobal('socket');
-        console.log("EMIT NEW POSITION", { "x": x, "y": y });
+        //console.log("EMIT NEW POSITION", { "x": x, "y": y });
         playerpositionold = { "x": x, "y": y };
-        socket.emit("updateclientposition", {'username': getGlobal('player').username, "x": x, "y": y})
+        setGlobal('playerposition', { "x": x, "y": y })
+        socket.emit("updateclientposition", { 'username': getGlobal('player').username, "x": x, "y": y })
     }
 
     food();

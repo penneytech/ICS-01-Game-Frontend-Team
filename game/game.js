@@ -29,6 +29,9 @@ export default function startGame() {
 }
 
 function gameLoop() {
+
+    let playerposition = getGlobal('playerposition');
+    console.log(playerposition)
     // Clear the canvas (This always stays at thsee top)
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
