@@ -6,6 +6,9 @@ import './socket/socket.js';
 import { LoginDialogue } from './pages/loginDialogue.js'
 LoginDialogue();
 
+import { initopponents } from './socket/initopponents.js';
+initopponents();
+
 import initGame from './game/initGame.js';
-//initGame();
+initGame();
 

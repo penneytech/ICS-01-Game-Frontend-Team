@@ -60,19 +60,22 @@ ArloImageObj.src = ArloImageUrl;
 // JimmieImageObj.src = JimmieImageUrl;
 
 export function playerOpponent() {
+
   let userMap = getGlobal("userMap");
   let ctx = getGlobal("ctx");
 
-  userMap.forEach((user) => {
-     let playerposition = getGlobal("playerposition");
-  let playeroffset = getGlobal("playeroffset");
+  userMap.forEach((user, key) => {
+    //console.log(user)
+    
+    let playerposition = getGlobal("playerposition");
+    let playeroffset = getGlobal("playeroffset");
     let positionX = user.x + (playerposition.x - playeroffset.x) * -1;
     let positionY = user.y + (playerposition.y - playeroffset.y) * -1;
-      let imageX = 150;
-  let imageY = 150;
-
+    let imageX = 150;
+    let imageY = 150;
 
     let imageObj;
+
     switch (user.type) {
       case "Shila":
         imageObj = ShilaImageObj;
@@ -92,28 +95,28 @@ export function playerOpponent() {
       case "Seonie":
         imageObj = SeonieImageObj;
         break;
-        case "Aram":
+      case "Aram":
         imageObj = AramImageObj;
         break;
-        case "Bina":
+      case "Bina":
         imageObj = BinaImageObj;
         break;
-        case "Jeal":
+      case "Jeal":
         imageObj = JealImageObj;
         break;
-        case "HatsumeMiku":
+      case "HatsumeMiku":
         imageObj = HatsumeMikuImageObj;
         break;
-        case "Polly":
+      case "Polly":
         imageObj = PollyImageObj;
         break;
-        case "Nika":
+      case "Nika":
         imageObj = NikaImageObj;
         break;
-        case "Tiz":
+      case "Tiz":
         imageObj = TizImageObj;
         break;
-        case "Arlo":
+      case "Arlo":
         imageObj = ArloImageObj;
         break;
       default:
@@ -121,7 +124,7 @@ export function playerOpponent() {
         break;
     }
 
-     if (imageObj) {
+    if (imageObj) {
       ctx.drawImage(
         imageObj,
         positionX - imageX / 2,
@@ -130,21 +133,21 @@ export function playerOpponent() {
         imageY
       );
     } else {
-    ctx.beginPath();
-    ctx.fillStyle = "blue";
-    ctx.arc(positionX, positionY, 60, 0, 2 * Math.PI);
-    ctx.fill();
+      ctx.beginPath();
+      ctx.fillStyle = "blue";
+      ctx.arc(positionX, positionY, 60, 0, 2 * Math.PI);
+      ctx.fill();
       ctx.fillStyle = "red";
       ctx.fill();
     }
-    
+
     // Draw text for score
     ctx.beginPath();
     ctx.fillStyle = "black";
     ctx.font = "20px Times New Roman";
     let scoreTextWidth = ctx.measureText(user.oppscore).width;
-    ctx.fillText(user.oppscore, positionX - scoreTextWidth / 2, positionY + 80);
-    
+    ctx.fillText(user.score, positionX - scoreTextWidth / 2, positionY + 80);
+
     // Draw text for username with shadow effect
     ctx.save(); // Save current context state
     ctx.shadowOffsetX = 2;
@@ -152,7 +155,7 @@ export function playerOpponent() {
     ctx.shadowBlur = 5;
     ctx.shadowColor = "red";
     let userTextWidth = ctx.measureText(user.username).width;
-    ctx.fillText(user.username, positionX - userTextWidth / 2, positionY - 80);
+    ctx.fillText(key, positionX - userTextWidth / 2, positionY - 80);
     ctx.restore(); // Restore previous context state without shadow effect
   });
 }

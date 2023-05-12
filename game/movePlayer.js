@@ -158,7 +158,7 @@ export function movePlayer() {
         let socket = getGlobal('socket');
         console.log("EMIT NEW POSITION", { "x": x, "y": y });
         playerpositionold = { "x": x, "y": y };
-        socket.emit("updateclientposition", {'username': getGlobal('player').username, "x": x, "y": x})
+        socket.emit("updateclientposition", {'username': getGlobal('player').username, "x": x, "y": y})
     }
 
     food();

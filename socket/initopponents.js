@@ -1,4 +1,4 @@
-import { getGlobal } from "../globals.js";
+import { getGlobal, setGlobal } from "../globals.js";
 
 export function initopponents(message) {
 
@@ -6,8 +6,9 @@ export function initopponents(message) {
 
     userMap = new Map();
 
-    let opponents = message;
-    
+   // let opponents = message;
+   let opponents = getGlobal('opponents');
+
     opponents.forEach((opponent) => {
         // add users to the map
         userMap.set(opponent.username, { x: opponent.x, y: opponent.y, type: opponent.type, score: opponent.score });
@@ -17,7 +18,9 @@ export function initopponents(message) {
     // userMap.delete('john');
 
     // loop through all remaining users in the map
-    // userMap.forEach((user, key) => {
-    //   console.log(`${key}: ${user.x} (${user.type})`);
-    // });
+    userMap.forEach((user, key) => {
+      console.log(`${key} ${user.x} ${user.y} ${user.type} ${user.score}`);
+    });
+
+    setGlobal('userMap', userMap);
 }

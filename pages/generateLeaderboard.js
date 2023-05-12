@@ -50,6 +50,6 @@ export function generateLeaderboard() {
     tableElem.appendChild(row);
   });
 
-  let leaderboarddiv = document.getElementById('leaderboarddiv');
-  leaderboarddiv.appendChild(tableElem);
+  // let leaderboarddiv = document.getElementById('leaderboarddiv');
+  // leaderboarddiv.appendChild(tableElem);
 }
