@@ -17,7 +17,7 @@ export default function initGame() {
 
     // Set the canvas dimensions to 600 x 600
     canvas.width = 600;
-    canvas.height = 600;
+    canvas.height = 700;
 
     // Give the canvas an id of "myCanvas"
     canvas.id = "myCanvas";

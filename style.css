@@ -13,8 +13,10 @@ html {
 #myCanvas{
     border-style: solid;
   border-color: black;
-     background-image: url("images/Map Background.png");
+     background-image: url("Map Background.png");
+  background-size: cover;
   flex: 1;
+
 }
 
 #content {
@@ -22,6 +24,9 @@ html {
     width: 100%;
     flex-direction: column;
     align-items: center;
+  position: relative;
+  margin: 0px;
+  padding: 0px;
 }
 
 #loginmessagediv {
@@ -172,28 +177,3 @@ button:hover {
   top: 30%;
 }
 
-@media (max-width: 768px) {
-  #play-button {
-    width: 100%;
-    max-width: none;
-    font-size: 36px;
-  }
-}
-#rotateMessage{
-  visibility: hidden;
-  height: 0px;
-  width: 0px;
-}
-
-element.style {
-    background-color: white;
-    padding: 25px;
-}
-#customization {
-    margin-top: 40px;
-    width: 300px;
-    height: 150px;
-    border-radius: 5px;
-    font-family: Arial, sans-serif;
-    z-index: 2;
-}

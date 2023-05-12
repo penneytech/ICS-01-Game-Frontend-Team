@@ -3,7 +3,7 @@ import { getGlobal } from "../globals.js";
 export function minimap() {
 let canvas = getGlobal('canvas');
     let ctx = getGlobal("ctx");
-    let opponents = getGlobal("opponents");
+    let userMap = getGlobal("userMap");
     let player = getGlobal("player");
     ctx.beginPath();
     ctx.rect(0, 0, canvas.height/4, canvas.width/4);
@@ -18,11 +18,11 @@ let canvas = getGlobal('canvas');
     ctx.arc(mapValue(playerposition.x, [0, 6000], [0,canvas.height/4]), mapValue(playerposition.y, [0, 6000], [0,canvas.width/4]), 2, 0, 2 * Math.PI);
     ctx.fill();
 
-    opponents.forEach((opponent) => {
-        // let positionX = opponent.x + (playerposition.x) * -1;
-        // let positionY = opponent.y ;
+    userMap.forEach((user) => {
+        // let positionX = user.x + (playerposition.x) * -1;
+        // let positionY = user.y ;
         ctx.beginPath();
-       ctx.arc(mapValue(opponent.x, [0, 6000], [0,canvas.height/4]), mapValue(opponent.y, [0, 6000], [0,canvas.width/4]), 1, 0, 2 * Math.PI);
+       ctx.arc(mapValue(user.x, [0, 6000], [0,canvas.height/4]), mapValue(user.y, [0, 6000], [0,canvas.width/4]), 1, 0, 2 * Math.PI);
         ctx.fill();
         ctx.fillStyle = "red";
         ctx.fill();

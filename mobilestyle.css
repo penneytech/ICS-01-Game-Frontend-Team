@@ -1,11 +1,11 @@
 /* For screens 800px and under */
  @media screen and (max-width: 850px) {
     /* For portrait orientation */
-     @media screen and (orientation: landscape) {
+     @media screen and (orientation: portrait) {
          html, body{
              height: 100%;
              width: 100%;
-            overflow: hidden;
+           overflow: hidden;
          }
 
          #content {
@@ -16,34 +16,49 @@
         }
          #myCanvas {
              margin: 0px;
-             height: 100%;
-           width: 100%;
-           flex: 1;
+             height: 350px;
+           width: 350px;
+           position: absolute;
+           overflow: hidden;
+           
         }
-   
-         
-  @media screen and (orientation: portrait){
-       #rotateMessage{
-         background-color: #f2e2cf;
-         visibility: visible;
-         height: 100%;
-         width: 100%;
-         font-size: 50px;
-         color: #000000;
-         background-image: none;
-         text-align: center;
-         vertical-align: middle;
-         display: flex;
-         flex-direction: column;
-         justify-content: center;
-         align-items: center;
-       }
-       
-#showGame {
-     visibility: hidden;
-         height:auto;
-         width: auto;
-  display: none;
+       #page-title {
+  font-family: fantasy;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  z-index: 1;
+  color: #ffbb1c;
 }
   }
+
+   
+@media screen and (orientation: landscape) and (max-width: 1000px) {
+html, body{
+             height: 100%;
+             width: 100%;
+  overflow: hidden;
+         }
+
+         #content {
+             margin: 1px;
+             height: 100%;
+           width: 100%; 
+            display: flex;
+        }
+         #myCanvas {
+             margin: 0px;
+             height: 250px;
+           width: 500px;
+           position: absolute;
+        }
+         #page-title {
+  font-family: Times New Roman;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  z-index: 1;
+  color: #ffbb1c;
+}
+}
  

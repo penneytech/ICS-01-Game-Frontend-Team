@@ -21,7 +21,7 @@ let downPressed = false;
 
 let x = 100;
 let y = 100;
-let speed = 3;
+let speed = 10;
 
 // let opponent = playerOpponent();
 // Add event listeners for key presses

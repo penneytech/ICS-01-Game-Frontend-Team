@@ -11,7 +11,7 @@ import { movePlayer } from "./movePlayer.js";
 import { drawMapOutline } from "./drawMapOutline.js";
 import { hitDetection } from "./hitDetection.js";
 import { minimap } from "./minimap.js";
-import { inGameLeaderboard } from "./ingameleaderboard.js";
+// import { inGameLeaderboard } from "./game/ingameleaderboard.js";
 
 // import { playerOpponentTwo } from "./opponent 2.js";
 // Global page variables 
@@ -39,7 +39,9 @@ function gameLoop() {
     playerPawn();
     hitDetection();
     minimap();
-    inGameLeaderboard();
+    // inGameLeaderboard();
+    //initopponents(); - Put this in a socket.on listener instead
+
     // Loop this function (this always stays at the bottom)
     requestAnimationFrame(gameLoop);
 }
