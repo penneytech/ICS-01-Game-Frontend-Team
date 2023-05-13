@@ -7,7 +7,7 @@ export function playerOpponent() {
   const ctx = getGlobal("ctx");
 
   userMap.forEach((user, key) => {
-    console.log(user, key);
+    //console.log(user, key);
 
     if (key === getGlobal("player").username) {
       return;

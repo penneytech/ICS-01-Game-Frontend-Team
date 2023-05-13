@@ -45,5 +45,6 @@ function gameLoop() {
     inGameLeaderboard();
 
     // Loop this function (this always stays at the bottom)
-    requestAnimationFrame(gameLoop);
+    //requestAnimationFrame(gameLoop);
+    setTimeout(gameLoop, 16.67);
 }

@@ -17,7 +17,7 @@ import updateFood from './updateFood.js';
 import foodInit from './foodInit.js';
 import opponentMovement from '../opponent/opponentMovement.js';
 import { generateLeaderboard } from '../pages/generateLeaderboard.js';
-import { initopponents } from './initopponents.js';
+import { initopponents } from './initOpponents.js';
 import opponentRemove from '../opponent/opponentRemove.js';
 import generateUserStats from '../pages/generateUserStats.js'
 //import { inGameLeaderboard } from '../game/ingameleaderboard.js';

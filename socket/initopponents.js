@@ -31,13 +31,12 @@ export function initopponents(message) {
 
     let userMap = getGlobal("userMap");
 
-    userMap = new Map();
-
     // let opponents = message;
     let opponents;
 
     if (!message) {
-        opponents = getGlobal('opponents');
+        // opponents = getGlobal('opponents');
+        return;
     } else {
         opponents = message;
     }
