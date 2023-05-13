@@ -6,8 +6,8 @@ ShilaImageObj.src = ShilaImageUrl;
 export function playerPawn() {
   let ctx = getGlobal("ctx");
   let canvas = getGlobal("canvas");
-  let centerX = canvas.width/2;
-  let centerY = canvas.height/2;
+  let centerX = canvas.width / 2;
+  let centerY = canvas.height / 2;
   let radius = 15;
   let scoreMultiplier = getGlobal("scoreMultiplier");
   let playeroffset = getGlobal("playeroffset")
@@ -16,16 +16,20 @@ export function playerPawn() {
   let imageX = 150;
   let imageY = 150;
 
+  let characterimagesmap = getGlobal('characterimagesmap');
+  let userstats = getGlobal('userstats');
+
   let imageObj;
-  imageObj = ShilaImageObj;
+  imageObj = characterimagesmap[userstats.type];
+
   if (imageObj) {
-      ctx.drawImage(
-        imageObj,
-        playeroffset.x - imageX / 2,
-        playeroffset.y - imageY / 2,
-        imageX,
-        imageY
-      );
+    ctx.drawImage(
+      imageObj,
+      playeroffset.x - imageX / 2,
+      playeroffset.y - imageY / 2,
+      imageX,
+      imageY
+    );
   } else {
     ctx.beginPath();
     ctx.fillStyle = "blue";

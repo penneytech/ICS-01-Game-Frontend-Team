@@ -14,6 +14,7 @@ const globals = {
   minimapcanvas: [],
   ctxmm: [],
   userMap: [],
+  characterimagesmap: {},
 
   //playerlocation variables
   playerposition: { "x": 100, "y": 100 }, // Position on the map

@@ -3,6 +3,7 @@ import { getGlobal, setGlobal } from '../globals.js';
 export default function generateUserStats() {
   const userStats = getGlobal('userstats');
   const userstatsdiv = document.getElementById('userstatsdiv');
+  const contentDiv = document.getElementById('content');
 
   // Create the user stats div
   const customization = document.createElement('div');
@@ -63,6 +64,106 @@ export default function generateUserStats() {
       dataCell2.textContent = userStats[statValues[i]];
       dataRow.appendChild(dataCell1);
       dataRow.appendChild(dataCell2);
+
+      if (statNames[i] === 'Character') {
+        dataCell2.setAttribute('data-stat', 'Character');
+      }
     }
   }
+
+  // Generate customize
+
+  // Create the parent div for customization
+  const customize = document.createElement('div');
+  customize.id = "customize";
+  contentDiv.appendChild(customize);
+
+  // Arrow 1 div
+  const arrow1 = document.createElement('div');
+  arrow1.style.backgroundImage = 'url(images/leftarrow.png)';
+  arrow1.setAttribute('id', 'arrow1');
+  customize.appendChild(arrow1);
+
+  // Player head div
+  const head = document.createElement('div');
+  head.setAttribute('id', 'head');
+  const defaultCharacter = userStats && userStats.type !== '' ? userStats.type : 'Jax'; // Set the default character based on userStats.type or provide a default if empty
+  const characterImagesMap = getGlobal('characterimagesmap');
+
+  if (characterImagesMap && characterImagesMap[defaultCharacter]) {
+    head.style.backgroundImage = `url(${characterImagesMap[defaultCharacter].src})`;
+    head.setAttribute('data-character', defaultCharacter);
+  } else {
+    // Handle the case when the character or image is not found
+    // Set a default background image or display an error message
+    // Example:
+    head.style.backgroundImage = "url('default-image.png')";
+    head.setAttribute('data-character', 'Default');
+  }
+
+  customize.appendChild(head);
+
+
+  // Arrow 2 div
+  const arrow2 = document.createElement('div');
+  arrow2.setAttribute('id', 'arrow2');
+  customize.appendChild(arrow2);
+
+  // Arrow images
+  let arrow1image = document.createElement('img');
+  arrow1image.src = "./images/leftarrow.png";
+  arrow1image.style.width = "60px";
+  arrow1.appendChild(arrow1image);
+
+  let arrow2image = document.createElement('img');
+  arrow2image.src = "./images/rightarrow.png";
+  arrow2image.style.width = "60px";
+  arrow2.appendChild(arrow2image);
+
+  // Add event listeners to arrow divs
+  arrow1.addEventListener('click', selectPreviousCharacter);
+  arrow2.addEventListener('click', selectNextCharacter);
 }
+
+
+function selectPreviousCharacter() {
+  console.log('selectPreviousCharacter')
+  const characterImagesMap = getGlobal('characterimagesmap');
+  const head = document.getElementById('head');
+  const currentCharacter = head.getAttribute('data-character');
+  const characterIndex = Object.keys(characterImagesMap).indexOf(currentCharacter);
+  const previousIndex = (characterIndex - 1 + Object.keys(characterImagesMap).length) % Object.keys(characterImagesMap).length;
+  const previousCharacter = Object.keys(characterImagesMap)[previousIndex];
+  head.style.backgroundImage = `url(${characterImagesMap[previousCharacter].src})`;
+  head.setAttribute('data-character', previousCharacter);
+  updateCharacterLabel(previousCharacter);
+  let socket = getGlobal('socket');
+  socket.emit('updatecharacter', previousCharacter)
+}
+
+function selectNextCharacter() {
+  console.log('selectNextCharacter')
+  const characterImagesMap = getGlobal('characterimagesmap');
+  const head = document.getElementById('head');
+  const currentCharacter = head.getAttribute('data-character');
+  const characterIndex = Object.keys(characterImagesMap).indexOf(currentCharacter);
+  const nextIndex = (characterIndex + 1) % Object.keys(characterImagesMap).length;
+  const nextCharacter = Object.keys(characterImagesMap)[nextIndex];
+  head.style.backgroundImage = `url(${characterImagesMap[nextCharacter].src})`;
+  head.setAttribute('data-character', nextCharacter);
+  updateCharacterLabel(nextCharacter);
+  let socket = getGlobal('socket');
+  socket.emit('updatecharacter', nextCharacter)
+}
+
+function updateCharacterLabel(character) {
+  console.log(character);
+  const userStats = getGlobal('userstats');
+  const characterDataCell = document.querySelector('td[data-stat="Character"]');
+  characterDataCell.textContent = character;
+  userStats["type"] = character;
+  console.log(userStats);
+  setGlobal('userstats', userStats);
+}
+
+

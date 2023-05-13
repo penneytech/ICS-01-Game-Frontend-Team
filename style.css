@@ -191,3 +191,9 @@ button:hover {
   align-items: center;
   display: flex;
 }
+
+#head {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
