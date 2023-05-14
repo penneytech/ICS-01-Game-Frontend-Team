@@ -57,6 +57,7 @@ socket.on("foodinit", (message) => {
     foodInit(message);
 });
 
+
 socket.on("updateopponentposition", (message) => {
     opponentMovement(message);
 });
