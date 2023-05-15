@@ -11,7 +11,7 @@ import loginSucceed from './loginSucceed.js';
 
 // Connect to the server and set the socket global variable
 //const socket = io("https://matts-game-studio-20.matthewschulte1.repl.co");
-const socket = io('http://localhost:3000');
+const socket = io('https://ics-01-game-backend-team.paulpenney.repl.co');
 
 import updateFood from './updateFood.js';
 import foodInit from './foodInit.js';
@@ -48,7 +48,7 @@ socket.on("loginSucceed", (message) => {
 
 // When a message is received from the server
 socket.on("foodupdate", (message) => {
-    //console.log("Food Update:", message);
+    console.log("Food Update:", message);
     updateFood(message);
 });
 

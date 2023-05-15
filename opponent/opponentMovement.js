@@ -1,7 +1,7 @@
-import {getGlobal, setGlobal} from '../globals.js'
+import { getGlobal, setGlobal } from '../globals.js'
 
 export default function opponentMovement(message) {
-    console.log('[opponentMovement]:', message);
+    //console.log('[opponentMovement]:', message);
 
     let userMap = getGlobal('userMap');
 
