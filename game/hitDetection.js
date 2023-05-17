@@ -49,30 +49,31 @@ export function hitDetection() {
   foodCollision = false;
   // Collisions between players and players
 
-  opponents.forEach((opponent, index) => {
-    // check for collision with player
+  // opponents.forEach((opponent, index) => {
+  //   // check for collision with player
 
-    if (
-      playerposition.x < opponent.x + opponentwidth &&
-      playerposition.x + opponentwidth > opponent.x &&
-      playerposition.y < opponent.y + opponentheight &&
-      playerposition.y + opponentheight > opponent.y
-    ) {
-      playerCollision = true;
-      if (playerMessageSent == false) {
-        // Send message
-        console.log("Collision between player and opponent", index);
-        socket.emit("playercollision", index);
-        // Set player message sent flag
-        playerMessageSent = true;
-      }
-    }
+  //   if (
+  //     playerposition.x < opponent.x + opponentwidth &&
+  //     playerposition.x + opponentwidth > opponent.x &&
+  //     playerposition.y < opponent.y + opponentheight &&
+  //     playerposition.y + opponentheight > opponent.y
+  //   ) {
+  //     playerCollision = true;
+  //     if (playerMessageSent == false) {
+  //       // Send message
+  //       console.log("Collision between player and opponent", index);
+  //       console.log("hellooooo");
+  //       socket.emit("playercollision", index);
+  //       // Set player message sent flag
+  //       playerMessageSent = true;
+  //     }
+  //   }
 
-  });
-  // Reset sent message flag if overall, the player has no collisions
-  if (playerCollision == false) {
-    playerMessageSent = false;
-  }
-  // Reset Collision for next cycle
-  playerCollision = false;
+  // });
+  // // Reset sent message flag if overall, the player has no collisions
+  // if (playerCollision == false) {
+  //   playerMessageSent = false;
+  // }
+  // // Reset Collision for next cycle
+  // playerCollision = false;
 } // End of hit detecting function
