@@ -10,8 +10,8 @@ import loginSucceed from './loginSucceed.js';
 
 
 // Connect to the server and set the socket global variable
-//const socket = io("https://matts-game-studio-20.matthewschulte1.repl.co");
-const socket = io('https://ics-01-game-backend-team.paulpenney.repl.co');
+const socket = io("https://ics-01-game-studio-backend-team-1.eliedagher.repl.co");
+//const socket = io('https://ics-01-game-backend-team.paulpenney.repl.co');
 
 import updateFood from './updateFood.js';
 import foodInit from './foodInit.js';
@@ -71,6 +71,7 @@ socket.on("initposition", (message) => {
 socket.on("initopponents", (message) => {
     console.log("Inital opponents:", message);
     initopponents(message);
+  console.log(JSON.stringify(message) + "opponents test");
 });
 
 socket.on("removeopponent", (message) => {
