@@ -8,9 +8,9 @@ import loginFail from './loginFail.js';
 import loginSucceed from './loginSucceed.js';
 
 // Connect to the server and set the socket global variable
-//const socket = io("https://ics-01-game-studio-backend-team-1.eliedagher.repl.co");
+const socket = io("https://ics-01-game-studio-backend-team-1.roycebasnet.repl.co");
 //const socket = io('https://ics-01-game-backend-team.paulpenney.repl.co');
-const socket = io('http://localhost:3000');
+//const socket = io('http://localhost:3000');
 
 import updateFood from './updateFood.js';
 import foodInit from './foodInit.js';
@@ -74,7 +74,7 @@ socket.on("initposition", (message) => {
 socket.on("initopponents", (message) => {
     console.log("Inital opponents:", message);
     initopponents(message);
-  console.log(JSON.stringify(message) + "opponents test");
+    console.log(JSON.stringify(message) + "opponents test");
 });
 
 // When an opponent is removed,  
@@ -103,3 +103,12 @@ socket.on("userstatsdata", (message) => {
     generateUserStats();
 });
 
+// When the user connects, get time remaining
+socket.on("timerleft", (message) => {
+        console.log("timerleft:", message);
+});
+
+// Get the round state
+socket.on("betweenrounds", (message) => {
+            console.log("betweenrounds:", message);
+});
