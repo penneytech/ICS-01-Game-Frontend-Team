@@ -8,8 +8,9 @@ import loginFail from './loginFail.js';
 import loginSucceed from './loginSucceed.js';
 
 // Connect to the server and set the socket global variable
-const socket = io("https://ics-01-game-studio-backend-team-1.roycebasnet.repl.co");
-//const socket = io('https://ics-01-game-backend-team.paulpenney.repl.co');
+
+//const socket = io("https://ics-01-game-studio-backend-team-1.eliedagher.repl.co");
+const socket = io('https://ics-01-game-backend-team.paulpenney.repl.co');
 //const socket = io('http://localhost:3000');
 
 import updateFood from './updateFood.js';
@@ -101,6 +102,14 @@ socket.on("userstatsdata", (message) => {
     console.log("userstatsdata:", message);
     setGlobal('userstats', message);
     generateUserStats();
+});
+
+// When the score is recieved
+socket.on("playerscoreupdate", (message) => {
+  console.log("currentscore:", message);
+    let player = getGlobal('player');
+    player.currentscore = message;
+    setGlobal('player', player);
 });
 
 // When the user connects, get time remaining
