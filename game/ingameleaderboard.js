@@ -1,6 +1,6 @@
 import { getGlobal } from "../globals.js";
 
-export default function inGameLeaderboard() {
+export function inGameLeaderboard() {
   let ctx = getGlobal("ctx");
   let ingameleaderboard = getGlobal('ingameleaderboard')
 
