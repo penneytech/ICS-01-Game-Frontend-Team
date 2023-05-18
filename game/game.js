@@ -11,9 +11,9 @@ import { movePlayer } from "./movePlayer.js";
 import { drawMapOutline } from "./drawMapOutline.js";
 import { hitDetection } from "./hitDetection.js";
 import { minimap } from "./minimap.js";
-import  inGameLeaderboard  from "./ingameleaderboard.js";
+import { inGameLeaderboard } from "./ingameleaderboard.js";
+import { playerCollisionDetection } from "./hitDetectionOpp.js";
 
-// import { playerOpponentTwo } from "./opponent 2.js";
 // Global page variables 
 let ctx;
 let canvas;
@@ -43,7 +43,7 @@ function gameLoop() {
     hitDetection();
     minimap();
     inGameLeaderboard();
-
+    playerCollisionDetection();
     // Loop this function (this always stays at the bottom)
     //requestAnimationFrame(gameLoop);
     setTimeout(gameLoop, 16.67);

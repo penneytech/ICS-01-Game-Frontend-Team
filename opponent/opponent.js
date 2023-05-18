@@ -43,8 +43,8 @@ export function playerOpponent() {
     ctx.beginPath();
     ctx.fillStyle = "black";
     ctx.font = "20px Times New Roman";
-    const scoreTextWidth = ctx.measureText(user.score).width;
-    ctx.fillText(user.score, positionX - scoreTextWidth / 2, positionY + 80);
+    const scoreTextWidth = ctx.measureText(user.currentscore).width;
+    ctx.fillText(user.currentscore, positionX - scoreTextWidth / 2, positionY + 80);
 
     // Draw text for username with shadow effect
     ctx.save();
