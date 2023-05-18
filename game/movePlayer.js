@@ -1,5 +1,4 @@
 import { getGlobal, setGlobal } from '../globals.js';
-import { food } from "./food.js";
 
 //JoyStick
 let jd;

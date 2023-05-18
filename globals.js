@@ -24,7 +24,7 @@ const globals = {
 
   //multipier variables 
   scoreMultiplier: 0,
-  player: { "username": "five star", "playerScore": 3287 },
+  player: { "username": "fivestar", "currentscore": 0, },
 
   //food variables
   foodarr: [],

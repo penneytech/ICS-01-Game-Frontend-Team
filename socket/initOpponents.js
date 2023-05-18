@@ -28,7 +28,6 @@ characterImages.forEach(({ type, url }) => {
 setGlobal('characterimagesmap', characterImagesMap);
 
 export function initopponents(message) {
-console.log('initoppo', message)
 let opponents;
     let userMap = getGlobal("userMap");
 
@@ -52,7 +51,7 @@ let opponents;
 
     // loop through all remaining users in the map
     userMap.forEach((user, key) => {
-        console.log(`${key} ${user.x} ${user.y} ${user.type} ${user.currentscore}`);
+        console.log("user map data" + `${key} ${user.x} ${user.y} ${user.type} ${user.currentscore}`);
     });
 
     setGlobal('userMap', userMap);
