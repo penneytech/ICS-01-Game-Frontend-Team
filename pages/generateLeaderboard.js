@@ -29,11 +29,12 @@ export function generateLeaderboard() {
   headerRow.appendChild(pointsHeader);
   tableElem.appendChild(headerRow);
 
-  leaderboarddata.forEach((item, index) => {
+  for (let i = 0; i < 10 && i < leaderboarddata.length; i++) {
+    const item = leaderboarddata[i];
     const row = document.createElement('tr');
 
     const indexCell = document.createElement('td');
-    indexCell.textContent = index + 1;
+    indexCell.textContent = i + 1;
     indexCell.style.border = '1px solid black';
     row.appendChild(indexCell);
 
@@ -48,7 +49,7 @@ export function generateLeaderboard() {
     row.appendChild(pointsCell);
 
     tableElem.appendChild(row);
-  });
+  }
 
   let leaderboarddiv = document.getElementById('leaderboarddiv');
   leaderboarddiv.appendChild(tableElem);
