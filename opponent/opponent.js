@@ -2,7 +2,7 @@ import { getGlobal, setGlobal } from "../globals.js";
 
 export function playerOpponent() {
   const characterImagesMap = getGlobal('characterimagesmap');
-  
+
   const userMap = getGlobal("userMap");
   const ctx = getGlobal("ctx");
 

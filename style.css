@@ -167,7 +167,6 @@ button:hover {
   font-weight: bold;
   position: relative;
   width: 350px;
-  padding: 20px;
   background-color: #12ce12;
   color: white;
   font-size: 24px;
@@ -179,9 +178,11 @@ button:hover {
 
 #customize {
   display: flex;
-  width: 350px;
-  height: 200px;
+  width: 300px;
+  height: 100px;
   background-color: white;
+  padding: 25px;
+  border-radius: 5px;
 }
 
 #arrow1, #head, #arrow2 {
@@ -196,4 +197,15 @@ button:hover {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+#userstatsdiv {
+  background-color: white;
+  padding: 25px;
+  margin-top: 20px;
+  width: 300px;
+  height: 150px;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  z-index: 2;
 }

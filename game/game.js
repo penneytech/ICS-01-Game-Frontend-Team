@@ -28,23 +28,39 @@ export default function startGame() {
     movePlayer();
 }
 
+// Define frames per second (FPS)
+let fps = 60; // Change this value to whatever frame rate you want your game to run at
+let interval = 1000 / fps; // Calculate the interval in milliseconds
+let lastTime = Date.now();
+
 function gameLoop() {
+    let now = Date.now();
+    let elapsed = now - lastTime;
+  
+    // If enough time has passed, update the game
+    if (elapsed > interval) {
+        // Get ready for next frame by setting lastTime=now, but also adjust for your
+        // specified fps interval not being a multiple of RAF's interval (16.7ms)
+        lastTime = now - (elapsed % interval);
 
-    let playerposition = getGlobal('playerposition');
-    //console.log(playerposition)
-    // Clear the canvas (This always stays at thsee top)
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let playerposition = getGlobal('playerposition');
 
-    drawMapOutline();
-    movePlayer();
-    food();
-    playerOpponent();
-    playerPawn();
-    hitDetection();
-    minimap();
-    inGameLeaderboard();
-    playerCollisionDetection();
-    // Loop this function (this always stays at the bottom)
-    //requestAnimationFrame(gameLoop);
-    setTimeout(gameLoop, 16.67);
+        // Clear the canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Call game state updates here
+        drawMapOutline();
+        movePlayer();
+        food();
+        playerOpponent();
+        playerPawn();
+        hitDetection();
+        minimap();
+        inGameLeaderboard();
+        playerCollisionDetection();
+    }
+
+    // Request next frame
+    requestAnimationFrame(gameLoop);
 }
+
