@@ -28,11 +28,10 @@ characterImages.forEach(({ type, url }) => {
 setGlobal('characterimagesmap', characterImagesMap);
 
 export function initopponents(message) {
-
+let opponents;
     let userMap = getGlobal("userMap");
 
     // let opponents = message;
-    let opponents;
 
     if (!message) {
         // opponents = getGlobal('opponents');
@@ -46,13 +45,13 @@ export function initopponents(message) {
         console.log('initopponents', opponent)
         userMap.set(opponent.username, { x: opponent.x, y: opponent.y, type: opponent.type, currentscore: opponent.currentscore });
     });
-
+//check github for master code to see where problem is 
     // delete a user by key
     // userMap.delete('john');
 
     // loop through all remaining users in the map
     userMap.forEach((user, key) => {
-        console.log(`${key} ${user.x} ${user.y} ${user.type} ${user.currentscore}`);
+        console.log("user map data" + `${key} ${user.x} ${user.y} ${user.type} ${user.currentscore}`);
     });
 
     setGlobal('userMap', userMap);

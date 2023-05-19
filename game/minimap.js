@@ -20,8 +20,10 @@ export function minimap() {
 
   userMap.forEach((user, key) => {
 
-    if (key == getGlobal("player").username)
+    let player = getGlobal("player");
+    if (key === '' || key === player.username) {
       return;
+    }
 
     ctx.beginPath();
     ctx.arc(mapValue(user.x, [0, 6000], [0, canvas.height / 4]), mapValue(user.y, [0, 6000], [0, canvas.width / 4]), 1, 0, 2 * Math.PI);

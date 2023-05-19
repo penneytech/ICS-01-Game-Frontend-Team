@@ -16,7 +16,7 @@ import { initopponents } from './socket/initOpponents.js';
 initopponents();
 
 import initGame from './game/initGame.js';
-//initGame();
+// initGame();
 
 import { TitlePage } from './pages/titlePage.js';
 //TitlePage();

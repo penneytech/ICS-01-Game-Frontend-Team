@@ -33,8 +33,6 @@ export function food() {
   //SAMPLE FOOD ARRAY
   const foodarr = getGlobal("foodarr");
 
-  let scoreMultiplier = getGlobal("scoreMultiplier");
-
   foodarr.forEach((food) => {
     let playerposition = getGlobal("playerposition");
     let playeroffset = getGlobal("playeroffset");
@@ -45,8 +43,8 @@ export function food() {
     let radius = 15;
     let ctx = getGlobal("ctx");
 
-    let imageX = 25 - scoreMultiplier;
-    let imageY = 25 - scoreMultiplier;
+    let imageX = 50;
+    let imageY = 50;
     let imageObj;
     switch (food.Type) {
       case "CanRed":
@@ -88,7 +86,7 @@ export function food() {
       ctx.arc(
         positionX,
         positionY,
-        radius - scoreMultiplier * 0.5,
+        radius,
         0,
         2 * Math.PI
       );

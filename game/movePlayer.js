@@ -1,5 +1,4 @@
 import { getGlobal, setGlobal } from '../globals.js';
-import { food } from "./food.js";
 
 //JoyStick
 let jd;
@@ -19,7 +18,7 @@ let rightPressed = false;
 let upPressed = false;
 let downPressed = false;
 
-let speed = 10;
+let speed = 5;
 
 let playerpositionold = { "x": 100, "y": 100 };
 
