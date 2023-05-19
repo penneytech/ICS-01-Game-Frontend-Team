@@ -4,6 +4,10 @@ import { getGlobal, setGlobal } from './globals.js';
 // // Run the socket module to establish a connection with the server
 import './socket/socket.js';
 
+// Start the internal timer
+import { timer } from './game/showTimer.js';
+timer();
+
 // Initialize User Map
 let userMap = getGlobal("userMap");
 userMap = new Map();

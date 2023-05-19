@@ -1,8 +1,10 @@
-import { getGlobal } from "../globals.js";
+import { getGlobal, setGlobal } from "../globals.js";
+
 
 export async function showTimer() {
   let timeleft = getGlobal("timeleft");
   let betweenrounds = getGlobal("betweenrounds");
+
   if (betweenrounds == true) {
     return;
   }
@@ -19,21 +21,14 @@ export async function showTimer() {
   }
 }
 
-export function timer(currentTime) {
+export function timer() {
 
-  setTimeout(function () {
+  setInterval(function () {
 
     let timeleft = getGlobal("timeleft");
-    let betweenrounds = getGlobal("betweenrounds");
-    
-    // if (betweenrounds == true) {
-    //   return;
-    // }
+    timeleft -= 1000;
+    setGlobal("timeleft", timeleft);
+console.log("timeleft", timeleft);
+  }, 1000);
 
-   // else {
-      timeleft -= 1000;
-      setGlobal("timeleft", timeleft);
-      timer(currentTime);
-    //}
-  }
 }
