@@ -16,6 +16,7 @@ const globals = {
   userMap: [],
   characterimagesmap: {},
 
+  timeleft: 120000,
   //playerlocation variables
   playerposition: { "x": 100, "y": 100 }, // Position on the map
   playeroffset: { "x": 300, "y": 300 }, // Offset from the physical canvas
@@ -35,11 +36,7 @@ const globals = {
   userheight: 45,
   userstats: [290811, 2389901, 16782, 19, 'test'],
   leaderboarddata: sampleleaderboarddata,
-  ingameleaderboard: [
-    { name: "Player 1", score: 100 },
-    { name: "Player 2", score: 200 },
-    { name: "Player 3", score: 300 },
-  ],
+  ingameleaderboard: [],
 };
 
 // Define a function to set a global variable

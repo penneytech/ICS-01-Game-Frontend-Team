@@ -3,6 +3,7 @@ html, body {
   width: 100%;
   margin: 0px;
   text-align: center;
+  @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
 }
 
 html {
@@ -12,7 +13,7 @@ html {
 
 #myCanvas{
     border-style: solid;
-  border-color: black;
+  border-color: #a8feff;
      background-image: url("images/Map Background.png");
   background-size: cover;
   flex: 1;
@@ -39,7 +40,7 @@ html {
 }
 
 #logindiv {
-  font-family: Arial, sans-serif;
+ font-family: 'Comic Neue', cursive;
   font-size: 20px;
   display: flex;
   flex-direction: column;
@@ -47,40 +48,41 @@ html {
   align-items: center; /* Center horizontally */
   box-shadow: 0 0 0 3px white; /* added box-shadow property */
   padding: 20px;
-  background-color: white;
+  background-color: #ffffff;
   border-radius: 3px;
   width: 300px;
 }
 
 input {
-    font-family: Arial, sans-serif;
+     font-family: 'Comic Neue', cursive;
     margin: 8px;
     font-size: 18px;
-    background-color: #333;
-    color: white;
+    background-color: #ffdbdb;
+    color: #5a3542;
     padding: 6px;
     border-radius: 5px;
     width: 285px;
+  border-color: #d0dfe2;
 }
 
-#page-title {
-  font-family: fantasy;
-  font-size: 48px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  z-index: 1;
-  color: #ffbb1c;
-}
 
 #sendButton {
-  background-color: #12ce12;
+  background-color: #82cfd9;
   color: white;
-  font-family: Arial, sans-serif;
+ font-family: 'Comic Neue', cursive;
   font-weight: bold;
   width: 300px;
   border-radius: 5px;
+  box-shadow: 0 5px #4f808c;
 }
-
+#sendButton:hover{
+    background-color: #74afbe;
+}
+#sendButton:active{
+  background-color: #82cfd9;
+  box-shadow: none;
+  transform: translateY(2px);
+}
 button {
     border-style: none;
     padding: 8px;
@@ -167,22 +169,29 @@ button:hover {
   font-weight: bold;
   position: relative;
   width: 350px;
-  background-color: #12ce12;
+  padding: 20px;
+  background-color: #bb79c8;
   color: white;
   font-size: 24px;
   text-align: center;
   border-radius: 5px;
-  margin: 0 auto;
   top: 30%;
+  box-shadow: 0 5px #7f4d89;
+  margin: 2px;
 }
-
+#play-button:hover{
+    background-color: #a469b0;
+}
+#play-button:active{
+  background-color: #875492;
+  box-shadow: none;
+  transform: translateY(2px);
+}
 #customize {
   display: flex;
-  width: 300px;
-  height: 100px;
+  width: 350px;
+  height: 200px;
   background-color: white;
-  padding: 25px;
-  border-radius: 5px;
 }
 
 #arrow1, #head, #arrow2 {
@@ -191,6 +200,7 @@ button:hover {
   justify-content: center;
   align-items: center;
   display: flex;
+  color: pink;
 }
 
 #head {
@@ -200,12 +210,15 @@ button:hover {
 }
 
 #userstatsdiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#customization {
+  margin-top: 10px;
   background-color: white;
   padding: 25px;
-  margin-top: 20px;
-  width: 300px;
-  height: 150px;
-  border-radius: 5px;
-  font-family: Arial, sans-serif;
-  z-index: 2;
+  width: 100%;
+  max-width: 300px;
 }

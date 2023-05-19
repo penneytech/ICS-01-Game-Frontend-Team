@@ -13,6 +13,8 @@ import { hitDetection } from "./hitDetection.js";
 import { minimap } from "./minimap.js";
 import { inGameLeaderboard } from "./ingameleaderboard.js";
 import { playerCollisionDetection } from "./hitDetectionOpp.js";
+import { showTimer } from "./showTimer.js";
+
 
 // Global page variables 
 let ctx;
@@ -58,6 +60,8 @@ function gameLoop() {
         minimap();
         inGameLeaderboard();
         playerCollisionDetection();
+          showTimer();
+
     }
 
     // Request next frame
