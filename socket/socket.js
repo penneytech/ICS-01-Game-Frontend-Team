@@ -20,6 +20,7 @@ import { generateLeaderboard } from '../pages/generateLeaderboard.js';
 import { initopponents } from './initOpponents.js';
 import opponentRemove from '../opponent/opponentRemove.js';
 import generateUserStats from '../pages/generateUserStats.js'
+import { timer } from '../game/showTimer.js';
 
 // Set the socket global variable
 setGlobal('socket', socket);
@@ -115,6 +116,7 @@ socket.on("playerscoreupdate", (message) => {
 // When the user connects, get time remaining
 socket.on("timerleft", (message) => {
         console.log("timerleft:", message);
+        timer(message);
 });
 
 // Get the round state
