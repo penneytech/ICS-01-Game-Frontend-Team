@@ -123,8 +123,8 @@ socket.on("timerleft", (message) => {
 socket.on("betweenrounds", (message) => {
     console.log("betweenrounds:", message);
     if (message == true) {
-        setGlobal('timeleft', 120000)
+        setGlobal('timeleft', 10000)
     } else {
-        setGlobal('timeleft', 10000);
+        setGlobal('timeleft', 120000);
     }
 });
