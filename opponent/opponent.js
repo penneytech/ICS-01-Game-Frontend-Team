@@ -2,14 +2,15 @@ import { getGlobal, setGlobal } from "../globals.js";
 
 export function playerOpponent() {
   const characterImagesMap = getGlobal('characterimagesmap');
-  
+
   const userMap = getGlobal("userMap");
   const ctx = getGlobal("ctx");
 
   userMap.forEach((user, key) => {
     //console.log(user, key);
 
-    if (key === getGlobal("player").username) {
+    let player = getGlobal("player");
+    if (key === '' || key === player.username) {
       return;
     }
 
