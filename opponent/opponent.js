@@ -9,8 +9,9 @@ export function playerOpponent() {
   userMap.forEach((user, key) => {
     //console.log(user, key);
 
-    if (key === getGlobal("player").username) {
-      return;
+    let player = getGlobal("player");
+    if (key === '' || key === player.username || key === 'frontendmonitor') {
+        return;
     }
 
     const playerposition = getGlobal("playerposition");
