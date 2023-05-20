@@ -8,6 +8,7 @@ export async function showTimer() {
   if (betweenrounds == true) {
     return;
   }
+  
   else {
     let minutes = Math.floor(timeleft / 60000);
     let seconds = ((timeleft % 60000) / 1000).toFixed(0);

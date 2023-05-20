@@ -14,7 +14,7 @@ import { minimap } from "./minimap.js";
 import { inGameLeaderboard } from "./ingameleaderboard.js";
 import { playerCollisionDetection } from "./hitDetectionOpp.js";
 import { showTimer } from "./showTimer.js";
-
+import { betweenRounds } from "./betweenRounds.js";
 
 // Global page variables 
 let ctx;
@@ -38,7 +38,7 @@ let lastTime = Date.now();
 function gameLoop() {
     let now = Date.now();
     let elapsed = now - lastTime;
-  
+
     // If enough time has passed, update the game
     if (elapsed > interval) {
         // Get ready for next frame by setting lastTime=now, but also adjust for your
@@ -60,7 +60,8 @@ function gameLoop() {
         minimap();
         inGameLeaderboard();
         playerCollisionDetection();
-          showTimer();
+        showTimer();
+        betweenRounds();
 
     }
 

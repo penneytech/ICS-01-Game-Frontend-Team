@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
 html, body {
   height: 100%;
   width: 100%;
   margin: 0px;
   text-align: center;
-  @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
 }
 
 html {
@@ -40,7 +41,7 @@ html {
 }
 
 #logindiv {
- font-family: 'Comic Neue', cursive;
+ /* font-family: 'Comic Neue'; */
   font-size: 20px;
   display: flex;
   flex-direction: column;
@@ -54,7 +55,7 @@ html {
 }
 
 input {
-     font-family: 'Comic Neue', cursive;
+     /* font-family: 'Comic Neue', cursive; */
     margin: 8px;
     font-size: 18px;
     background-color: #ffdbdb;
@@ -108,59 +109,62 @@ button:hover {
   width: 340px;
   max-width: 400px; 
   background-color: white;
-  font-family: monospace;
   box-shadow: 0 0 0 3px white; /* added box-shadow property */
   border-radius: 3px;
   margin-bottom: 35px;
 }
 
+#my-leaderboard-table td {
+font-size: 20px;
+}
+
 #my-leaderboard-table tr:first-child {
-  background-color: black;
+  background-color: #dd3030;
   color: white;
 }
 
 #my-leaderboard-table tr:nth-child(2) td:first-child {
-  background-color: gold;
+  background-color: #ed7996;
   color: black;
 }
 
 #my-leaderboard-table tr:nth-child(2) td:nth-child(2) {
-  background-color: gold;
+  background-color: #ed7996;
   color: black;
 }
 
 #my-leaderboard-table tr:nth-child(2) td:last-child {
-  background-color: gold;
+  background-color: #ed7996;
   color: black;
 }
 
 #my-leaderboard-table tr:nth-child(3) td:first-child {
-  background-color: silver;
+  background-color: #daba98;
   color: black;
 }
 
 #my-leaderboard-table tr:nth-child(3) td:nth-child(2) {
-  background-color: silver;
+  background-color: #daba98;
   color: black;
 }
 
 #my-leaderboard-table tr:nth-child(3) td:last-child {
-  background-color: silver;
+  background-color: #daba98;
   color: black;
 }
 
 #my-leaderboard-table tr:nth-child(4) td:first-child {
-  background-color: #cd7f32;
+  background-color: #92e2e9;
   color: black;
 }
 
 #my-leaderboard-table tr:nth-child(4) td:nth-child(2) {
-  background-color: #cd7f32; 
+  background-color: #92e2e9; 
   color: black;
 }
 
 #my-leaderboard-table tr:nth-child(4) td:last-child {
-  background-color: #cd7f32;
+  background-color: #92e2e9;
   color: black;
 }
 
@@ -221,6 +225,8 @@ button:hover {
   padding: 25px;
   width: 100%;
   max-width: 300px;
+  font-family: Arial, sans-serif;
+  color: #735026;
 }
 
 #logo {

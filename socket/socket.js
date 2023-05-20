@@ -10,8 +10,8 @@ import loginSucceed from './loginSucceed.js';
 // Connect to the server and set the socket global variable
 
 //const socket = io("https://ics-01-game-studio-backend-team-1.eliedagher.repl.co");
-const socket = io('https://ics-01-game-backend-team.paulpenney.repl.co');
-//const socket = io('http://localhost:3000');
+//const socket = io('https://ics-01-game-backend-team.paulpenney.repl.co');
+const socket = io('http://localhost:3000');
 
 import updateFood from './updateFood.js';
 import foodInit from './foodInit.js';
@@ -119,12 +119,22 @@ socket.on("timerleft", (message) => {
 
 });
 
+// When the user connects, get time remaining
+socket.on("resetscore", () => {
+    console.log("reset score");
+    let player = getGlobal('player');
+    player.currentscore = 0;
+    setGlobal('player', player);
+});
+
 // Get the round state
 socket.on("betweenrounds", (message) => {
     console.log("betweenrounds:", message);
     if (message == true) {
+        setGlobal('betweenrounds', true);
         setGlobal('timeleft', 10000)
     } else {
+        setGlobal('betweenrounds', false);
         setGlobal('timeleft', 120000);
     }
 });

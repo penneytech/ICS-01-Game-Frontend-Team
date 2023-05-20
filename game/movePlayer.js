@@ -150,8 +150,9 @@ export function movePlayer() {
     }
 
     // Check to see if playerposition has updated. 
+    let betweenrounds = getGlobal('betweenrounds');
 
-    if (JSON.stringify(playerpositionold) !== JSON.stringify({ "x": x, "y": y })) {
+    if (JSON.stringify(playerpositionold) !== JSON.stringify({ "x": x, "y": y }) && betweenrounds == false) {
         let socket = getGlobal('socket');
         //console.log("EMIT NEW POSITION", { "x": x, "y": y });
         playerpositionold = { "x": x, "y": y };

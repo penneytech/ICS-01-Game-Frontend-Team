@@ -15,8 +15,8 @@ const globals = {
   ctxmm: [],
   userMap: [],
   characterimagesmap: {},
-
   timeleft: 120000,
+  betweenrounds: false,
   //playerlocation variables
   playerposition: { "x": 100, "y": 100 }, // Position on the map
   playeroffset: { "x": 300, "y": 300 }, // Offset from the physical canvas
