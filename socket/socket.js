@@ -10,8 +10,8 @@ import loginSucceed from './loginSucceed.js';
 // Connect to the server and set the socket global variable
 
 //const socket = io("https://ics-01-game-studio-backend-team-1.eliedagher.repl.co");
-//const socket = io('https://ics-01-game-backend-team.paulpenney.repl.co');
-const socket = io('http://localhost:3000');
+const socket = io('https://ics-01-game-backend-team.paulpenney.repl.co');
+//const socket = io('http://localhost:3000');
 
 import updateFood from './updateFood.js';
 import foodInit from './foodInit.js';

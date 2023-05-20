@@ -8,6 +8,8 @@ export default function opponentMovement(message) {
     userMap.set(message.username, { ...userMap.get(message.username), x: message.x });
     userMap.set(message.username, { ...userMap.get(message.username), y: message.y });
     userMap.set(message.username, { ...userMap.get(message.username), type: message.type });
+    userMap.set(message.username, { ...userMap.get(message.username), score: message.score });
+
 
     setGlobal('userMap', userMap);
 
