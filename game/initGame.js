@@ -8,6 +8,11 @@ import { generateSprinkles } from "./generateSprinkles.js";
 
 
 export default function initGame() {
+
+    // unhide the joystock
+    let joy1Div = document.getElementById('joy1Div');
+    joy1Div.style.display = "block";
+
     // Get a reference to the content div
     const contentDiv = document.getElementById("content");
 
@@ -31,7 +36,7 @@ export default function initGame() {
 
     // Set the canvas and context as global variables
     // Generate Sprinkles
-    generateSprinkles(6000, 6000, 2,5000)
+    generateSprinkles(6000, 6000, 2, 5000)
 
     // Start the game
     startGame();

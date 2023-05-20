@@ -8,6 +8,10 @@ import './socket/socket.js';
 import { timer } from './game/showTimer.js';
 timer();
 
+// Hide the joystock
+let joy1Div = document.getElementById('joy1Div');
+joy1Div.style.display = "none";
+
 // Initialize User Map
 let userMap = getGlobal("userMap");
 userMap = new Map();

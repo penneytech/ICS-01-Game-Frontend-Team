@@ -1,5 +1,5 @@
 /* For screens 800px and under */
- @media screen and (max-width: 850px) {
+ @media screen and (max-width: 600px) {
     /* For portrait orientation */
      @media screen and (orientation: portrait) {
          html, body{
@@ -16,11 +16,7 @@
         }
          #myCanvas {
              margin: 0px;
-             height: 350px;
-           width: 350px;
-           position: absolute;
-           overflow: hidden;
-           
+           width: 100%;        
         }
        #page-title {
   font-family: fantasy;
