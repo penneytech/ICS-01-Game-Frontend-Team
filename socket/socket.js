@@ -112,14 +112,7 @@ socket.on("playerscoreupdate", (message) => {
     setGlobal('player', player);
 });
 
-// When the user connects, get time remaining
-socket.on("timerleft", (message) => {
-    console.log("timeleft:", message);
-    setGlobal('timeleft', message);
-
-});
-
-// When the user connects, get time remaining
+// Reset the score
 socket.on("resetscore", () => {
     console.log("reset score");
     let player = getGlobal('player');
@@ -137,4 +130,11 @@ socket.on("betweenrounds", (message) => {
         setGlobal('betweenrounds', false);
         setGlobal('timeleft', 120000);
     }
+});
+
+// When the user connects, get time remaining
+socket.on("timerleft", (message) => {
+    console.log("timeleft:", message);
+    setGlobal('timeleft', message);
+
 });
