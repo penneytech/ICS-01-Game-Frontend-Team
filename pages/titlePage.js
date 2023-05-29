@@ -26,5 +26,4 @@ export function TitlePage() {
   let player = getGlobal('player')
 
    socket.emit('userstats', player.username);
-  //socket.emit('userstats', "user1");
 }
